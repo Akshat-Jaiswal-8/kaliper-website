@@ -1,21 +1,34 @@
+"use client";
 import React from "react";
 import { features } from "@/app/(home)/constant";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
-export const Features = () => {
+const featureVariants = {
+  hidden: { opacity: 0, x: 0, y: 0 },
+  visible: { opacity: 1, x: 0, y: 0 },
+};
+
+export const Features = (): React.ReactNode => {
   return (
-    <section className="mt-[15rem] h-full w-full">
+    <section className="mt-32 h-full w-full">
       <div className="container mx-auto">
         <div className="flex justify-between">
           <div className="flex flex-col">
             {features.slice(0, 3).map((eachFeature, index) => (
-              <div key={index} className="relative my-20">
+              <motion.div
+                variants={featureVariants}
+                initial={"hidden"}
+                animate={"visible"}
+                transition={{ delay: index + 1 - 0.5, duration: 0.8 }}
+                key={index}
+                className="relative my-20">
                 <Image
                   height={500}
                   width={500}
                   className="relative rotate-180"
-                  src="/features-border.svg"
+                  src="/svg/features-border.svg"
                   alt="feature border"
                 />
                 <div className="absolute inset-0 flex justify-end">
@@ -23,40 +36,56 @@ export const Features = () => {
                     <span className="my-4 text-end text-sm font-semibold">{eachFeature.title}</span>
                     <span className="px-4 text-end text-gray-300">{eachFeature.description}</span>
                   </div>
-                  <div>
-                    <img
-                      src={"/feature-icon-background.png"}
-                      className={"absolute right-5 top-4 h-28 w-28 rounded-full opacity-20"}
+                  <div className={"relative h-24 w-24"}>
+                    <Image
+                      src={"/webp/feature-icon-background.webp"}
+                      height={150}
+                      width={150}
+                      alt={"feature icon background"}
+                      className={"absolute right-8 top-7 rounded-full opacity-20"}
                     />
-                    <img
-                      className={"absolute right-10 top-6 h-20 w-20"}
+                    <Image
+                      className="absolute right-12 top-8"
                       src={eachFeature.icon}
                       alt="icon"
+                      width={70}
+                      height={70}
                     />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
           <div className="flex flex-col">
-            {features.slice(3, 6).map((eachFeature, index) => (
-              <div key={index} className={cn("relative my-20", index === 0 && "mt-0")}>
+            {features.slice(3, 6).map((eachFeature: features, index: number) => (
+              <motion.div
+                variants={featureVariants}
+                initial={"hidden"}
+                animate={"visible"}
+                transition={{ delay: index + 1, duration: 0.8 }}
+                key={index}
+                className={cn("relative my-10", index === 0 && "mt-0")}>
                 <Image
                   height={500}
                   width={500}
                   className="relative"
-                  src="/features-border.svg"
+                  src="/svg/features-border.svg"
                   alt="feature border"
                 />
-                <div>
-                  <img
-                    src={"/feature-icon-background.png"}
-                    className={"absolute left-8 top-4 h-28 w-28 rounded-full opacity-20"}
+                <div className={"relative h-24 w-24"}>
+                  <Image
+                    src={"/webp/feature-icon-background.webp"}
+                    height={150}
+                    width={150}
+                    alt={"feature icon background"}
+                    className={"absolute -top-[7rem] left-8 rounded-full opacity-20"}
                   />
-                  <img
-                    className={"absolute left-10 top-7 h-20 w-20"}
+                  <Image
+                    className="absolute -top-[6.2rem] left-10"
                     src={eachFeature.icon}
                     alt="icon"
+                    width={70}
+                    height={70}
                   />
                 </div>
                 <div className="absolute inset-0 flex justify-end">
@@ -67,7 +96,7 @@ export const Features = () => {
                     <span className="px-4 text-start text-gray-300">{eachFeature.description}</span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Montserrat, Poppins, Prompt } from "next/font/google";
+import React from "react";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -41,7 +42,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={"bg-[#171717]"}>
+      <head>
+        <title>Kaliper - Your IT Consulting Partner</title>
+      </head>
       <body
         className={`${montserrat.variable} ${prompt.variable} ${poppins.variable} ${inter.variable} bg-[#171717] font-montserrat antialiased`}>
         {children}

@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "hero-background": "url('/hero-background.svg')",
+        "hero-background": "url('/svg/hero-background.svg')",
       },
       colors: {
         background: "var(--background)",
