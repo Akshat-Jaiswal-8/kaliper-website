@@ -5,10 +5,9 @@ import MapComponent from "@/app/(home)/_components/map";
 
 export const Address = () => {
   return (
-    <div className={"my-auto w-[40%]"}>
+    <div className={"my-auto rounded-2xl border border-[#415572] border-opacity-50"}>
       <MapComponent />
-
-      <div className={"flex h-full flex-col gap-y-10"}>
+      <div className={"mt-4 flex h-full flex-col gap-y-10 p-4"}>
         <div className={"flex flex-col gap-y-8 font-poppins"}>
           <div>
             <h3 className={"mb-2 font-semibold"}>Address</h3>

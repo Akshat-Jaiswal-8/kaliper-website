@@ -2,8 +2,9 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 const navLinks = [
-  { name: "About", href: "/about" },
+  { name: "About Us", href: "/about-us" },
   { name: "Services", href: "/services" },
   { name: "Blogs", href: "/blogs" },
   { name: "Let's Talk", href: "/contact-us" },
@@ -32,7 +33,9 @@ export const Navbar = (): React.ReactNode => {
       </div>
       <div className={"flex gap-x-12"}>
         {navLinks.map((navElement) => (
-          <div key={navElement.name}>{navElement.name}</div>
+          <Link href={navElement.href} key={navElement.name}>
+            {navElement.name}
+          </Link>
         ))}
       </div>
     </motion.div>

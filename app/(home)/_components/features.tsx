@@ -10,11 +10,26 @@ const featureVariants = {
   visible: { opacity: 1, x: 0, y: 0 },
 };
 
+const gradientVariants = {
+  hidden: { opacity: 0, x: 0, y: 0 },
+  visible: { opacity: 1, x: 0, y: 0 },
+};
+const gradientTransition = { delay: 0.4, duration: 0.3 };
+
 export const Features = (): React.ReactNode => {
   return (
-    <section className="mt-32 h-full w-full">
-      <div className="container mx-auto">
-        <div className="flex justify-between">
+    <section className="relative mt-10 h-full w-full px-6">
+      <motion.div
+        variants={gradientVariants}
+        initial={"hidden"}
+        animate={"visible"}
+        transition={gradientTransition}
+        className={
+          "absolute -left-[20%] h-[90%] w-[80%] rounded-full bg-[#8AA2D0] bg-opacity-30 blur-[20rem]"
+        }
+      />
+      <div className="mx-auto">
+        <div className="mx-auto flex max-w-screen-lg justify-between">
           <div className="flex flex-col">
             {features.slice(0, 3).map((eachFeature, index) => (
               <motion.div
@@ -25,8 +40,8 @@ export const Features = (): React.ReactNode => {
                 key={index}
                 className="relative my-20">
                 <Image
-                  height={500}
-                  width={500}
+                  height={600}
+                  width={600}
                   className="relative rotate-180"
                   src="/svg/features-border.svg"
                   alt="feature border"
@@ -66,8 +81,8 @@ export const Features = (): React.ReactNode => {
                 key={index}
                 className={cn("relative my-10", index === 0 && "mt-0")}>
                 <Image
-                  height={500}
-                  width={500}
+                  height={600}
+                  width={600}
                   className="relative"
                   src="/svg/features-border.svg"
                   alt="feature border"

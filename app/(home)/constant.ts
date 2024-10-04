@@ -81,6 +81,22 @@ export const articlesCard: articlesCardProps[] = [
     src: "/svg/education-employment.svg",
     heading: "Education & Employment",
   },
+  {
+    src: "/svg/location-compass-1--arrow-compass-location-gps-map-maps-point.svg",
+    heading: "Hospitality & Travel",
+  },
+  {
+    src: "/svg/shipping-truck--truck-shipping-delivery-transfer.svg",
+    heading: "Manufacturing & Supply chain",
+  },
+  {
+    src: "/svg/camera-video--film-television-tv-camera-movies-video-recorder.svg",
+    heading: "Media & Entertainment",
+  },
+  {
+    src: "/svg/fork-spoon--fork-spoon-food-dine-cook-utensils-eat-restaurant-dining-kitchenware.svg",
+    heading: "Restaurants & QSR",
+  },
 ];
 
 export const testimonials: { name: string; src: string; content: string }[] = [

@@ -2,8 +2,7 @@ import React from "react";
 
 export const Footer = (): React.ReactNode => {
   return (
-    <section
-      className={"container mx-auto my-20 h-full rounded-xl bg-[#1012144D] bg-opacity-30 p-2"}>
+    <section className={"mx-auto h-full w-[90%] rounded-xl bg-[#1012144D] bg-opacity-30 p-2 px-6"}>
       <h1 className={"mb-10 text-center text-2xl font-light"}>Follow Us</h1>
       <h1 className={"flex justify-center gap-x-4 text-3xl font-normal"}>
         <span>Linkedin</span>
