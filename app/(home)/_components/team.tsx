@@ -1,12 +1,29 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-const images = [
-  { src: "/webp/sadhna.webp", alt: "sadhna image" },
-  { src: "/webp/garima.webp", alt: "garima image" },
-  { src: "/webp/sakshi.webp", alt: "sakshi image" },
+const founders = [
+  { src: "/svg/pradeep.svg", alt: "pradeep sir image" },
+  { src: "/svg/pradeep.svg", alt: "pradeep sir image" },
+];
+const engineers = [
+  { src: "/svg/varsha.svg", alt: "varsha" },
+  { src: "/svg/sonu.svg", alt: "sonu" },
+  { src: "/svg/gajendar.svg", alt: "gajendar" },
+  { src: "/svg/tejas.svg", alt: "tejas" },
+  { src: "/svg/gaurav.svg", alt: "gaurav" },
+  { src: "/svg/deepankar.svg", alt: "deepankar" },
+  { src: "/svg/akshat.svg", alt: "akshat" },
+];
+const marketing = [
+  { src: "/svg/tanu.svg", alt: "tanu" },
+  { src: "/svg/priyanka.svg", alt: "priyanka" },
+];
+const designers = [
+  { src: "/svg/garima.svg", alt: "garima" },
+  { src: "/svg/sakshi.svg", alt: "sakshi" },
+  { src: "/svg/sadhna.svg", alt: "sadhna" },
 ];
 
 const headerVariants = {
@@ -20,48 +37,155 @@ const imageVariants = {
 };
 
 export const Team = () => {
+  const [viewAll, setViewAll] = useState<boolean>(false);
+
+  const handleViewAll = () => {
+    setViewAll(!viewAll);
+  };
   return (
     <AnimatePresence>
       <section className="mt-20">
-        <div className="mb-20 h-[calc(100vh-6rem)] w-full">
-          <div className="hero-gradient left-[10%] mx-auto flex h-[80vh] w-[95vw] flex-col rounded-xl text-center">
+        <div className="w-full">
+          <div className="mx-auto flex w-[90%] flex-col rounded-2xl bg-[#D4E2FF12] py-6 text-center">
             <motion.div
               variants={headerVariants}
               initial={"hidden"}
-              whileInView={"visible"}
+              animate={"visible"}
               transition={{ delay: 0.4, duration: 0.8 }}
               className="flex w-full flex-col gap-y-4">
-              <h3 className="mx-auto mt-10 text-center font-montserrat text-xl text-slate-100 text-opacity-85">
+              <h3 className="mx-auto text-center font-montserrat text-xl text-slate-100 text-opacity-85">
                 Team Section
               </h3>
-              <h1 className="mx-auto w-2/3 text-center text-6xl font-bold">Meet the team</h1>
-              <h2 className="mx-auto text-center text-3xl text-[#797979]">
+              <h1 className="mx-auto w-2/3 text-center font-bold lg:text-5xl xl:text-6xl">
+                Meet the team
+              </h1>
+              <h2 className="mx-auto text-center text-[#797979] lg:text-2xl xl:text-3xl">
                 Meet our team of professionals to serve you
               </h2>
             </motion.div>
-            <div className="relative mt-10 flex h-full items-center justify-between">
-              {images.map((image, index) => (
-                <motion.div
-                  variants={imageVariants}
-                  initial={"hidden"}
-                  whileInView={"visible"}
-                  transition={{ delay: 0.4, duration: 0.8 }}
-                  key={index}>
-                  <Image
-                    className={`absolute ${
-                      index === 0
-                        ? "bottom-0 left-0"
-                        : index === 1
-                          ? "left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2"
-                          : "bottom-0 right-0"
-                    }`}
-                    src={image.src}
-                    width={400}
-                    height={400}
-                    alt={image.alt}
-                  />
-                </motion.div>
-              ))}
+            <div className={"flex h-full flex-col items-center justify-between px-6"}>
+              <div className={"mt-20 flex w-full items-center"}>
+                <div className="m-auto flex flex-col font-bold lg:text-3xl xl:text-4xl">
+                  {"FOUNDERS".split("").map((letter, index) => (
+                    <span key={index} className="mx-6 text-center">
+                      {letter}
+                    </span>
+                  ))}
+                </div>
+                <div className="relative grid h-full w-full grid-cols-2 items-center justify-around">
+                  {founders.map((image, index) => (
+                    <motion.div
+                      variants={imageVariants}
+                      initial={"hidden"}
+                      whileInView={"visible"}
+                      transition={{ delay: 0.4, duration: 0.8 }}
+                      key={index}
+                      className={"z-20"}>
+                      <Image
+                        className={"h-full w-full"}
+                        src={image.src}
+                        width={150}
+                        height={150}
+                        alt={image.alt}
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+              {viewAll && (
+                <>
+                  <div className={"mt-20 flex w-full items-center"}>
+                    <div className="m-auto flex flex-col font-bold lg:text-3xl xl:text-4xl">
+                      {"DESIGNERS".split("").map((letter, index) => (
+                        <span key={index} className="mx-6 text-center">
+                          {letter}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="relative grid h-full w-full grid-cols-2 items-center justify-around">
+                      {designers.map((image, index) => (
+                        <motion.div
+                          variants={imageVariants}
+                          initial={"hidden"}
+                          whileInView={"visible"}
+                          transition={{ delay: 0.4, duration: 0.8 }}
+                          key={index}>
+                          <Image
+                            className={"h-full w-full"}
+                            src={image.src}
+                            width={120}
+                            height={120}
+                            alt={image.alt}
+                          />
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className={"mt-20 flex w-full"}>
+                    <div className="flex flex-col font-bold lg:text-3xl xl:text-6xl">
+                      {"ENGINEERS".split("").map((letter, index) => (
+                        <span key={index} className="mx-6 text-center">
+                          {letter}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="relative grid h-full w-full grid-cols-2 items-center justify-center gap-4 text-center">
+                      {engineers.map((image, index) => (
+                        <motion.div
+                          variants={imageVariants}
+                          initial={"hidden"}
+                          whileInView={"visible"}
+                          transition={{ delay: 0.4, duration: 0.8 }}
+                          key={index}
+                          className={`mx-auto ${engineers.length === 3 && index === 2 ? "col-span-2" : ""}`}>
+                          <Image
+                            className={"h-full w-full"}
+                            src={image.src}
+                            width={150}
+                            height={150}
+                            alt={image.alt}
+                          />
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className={"mt-20 flex w-full items-center"}>
+                    <div className="m-auto flex flex-col font-bold lg:text-3xl xl:text-4xl">
+                      {"MARKETING".split("").map((letter, index) => (
+                        <span key={index} className="mx-6 text-center">
+                          {letter}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="relative grid h-full w-full grid-cols-2 items-center justify-around">
+                      {marketing.map((image, index) => (
+                        <motion.div
+                          variants={imageVariants}
+                          initial={"hidden"}
+                          whileInView={"visible"}
+                          transition={{ delay: 0.4, duration: 0.8 }}
+                          key={index}
+                          className={""}>
+                          <Image
+                            className={"h-full w-full"}
+                            src={image.src}
+                            width={150}
+                            height={150}
+                            alt={image.alt}
+                          />
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+            <div className="relative z-20 mx-auto w-full text-center">
+              <button
+                onClick={handleViewAll}
+                className="rounded-full border border-[#FFFFFF] bg-[#E6E6E60D] px-4 py-2 font-inter text-sm font-semibold">
+                View All
+              </button>
             </div>
           </div>
         </div>
