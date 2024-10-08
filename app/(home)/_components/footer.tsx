@@ -1,3 +1,4 @@
+import { MessageCircle } from "lucide-react";
 import Link  from "next/link";
 import React from "react";
 
@@ -33,6 +34,7 @@ export const Footer = (): React.ReactNode => {
             }>
            <a href="tel:+918299513060"> Request a call</a>
           </button>
+          <Link className={"flex gap-x-1 items-center"} href={'https://api.whatsapp.com/send/?phone=918299513060&text=Hii%20Amit%20&type=phone_number&app_absent=0'}> <MessageCircle color="#00eb71" strokeWidth={1} /> <span className={"text-green-500"}>Connect Us On Whatsapp</span></Link>
           <p className={"font-inter text-sm font-semibold"}>+918299513060</p>
           <a href="mailto:amit.verma@kaliper.in">amit.verma@kaliper.in</a>
         </div>
