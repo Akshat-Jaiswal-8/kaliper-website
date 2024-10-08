@@ -1,40 +1,52 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect } from "react";
+import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 
+const gradientVariants = {
+  hidden: { opacity: 0, x: 0, y: 0 },
+  visible: { opacity: 1, x: 0, y: 0 },
+};
+const gradientTransition = { delay: 0.4, duration: 0.3 };
+
+const headingVariants = {
+  hidden: { opacity: 0, x: 0, y: 50 },
+  visible: { opacity: 1, x: 0, y: 0 },
+};
+const headingTransition = { delay: 0.7, duration: 0.2 };
+
+const contentVariants = {
+  hidden: { opacity: 0, x: 0, y: 50 },
+  visible: { opacity: 1, x: 0, y: 0 },
+};
+const contentTransition = { delay: 1, duration: 0.2 };
+
+const buttonVariants = {
+  hidden: { opacity: 0, x: 0, y: 0 },
+  visible: { opacity: 1, x: 0, y: 0 },
+};
+const buttonTransition = { delay: 1.3, duration: 0.2 };
+
+const successVariants = {
+  hidden: { opacity: 0, x: 0, y: 50 },
+  visible: { opacity: 1, x: 0, y: 0 },
+};
+const successTransition = { delay: 1.6, duration: 0.2 };
+
+const AnimatedCounter = ({ value, className }: { value: number; className: string }) => {
+  const count = useMotionValue(value);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+
+  useEffect(() => {
+    const animation = animate(count, value, { duration: 1 });
+    return () => animation.stop();
+  }, [count, value]);
+
+  return <motion.p className={className}>{rounded}</motion.p>;
+};
+
 export const Hero = (): React.ReactNode => {
-  const gradientVariants = {
-    hidden: { opacity: 0, x: 0, y: 0 },
-    visible: { opacity: 1, x: 0, y: 0 },
-  };
-  const gradientTransition = { delay: 0.4, duration: 0.3 };
-
-  const headingVariants = {
-    hidden: { opacity: 0, x: 0, y: 50 },
-    visible: { opacity: 1, x: 0, y: 0 },
-  };
-  const headingTransition = { delay: 0.7, duration: 0.2 };
-
-  const contentVariants = {
-    hidden: { opacity: 0, x: 0, y: 50 },
-    visible: { opacity: 1, x: 0, y: 0 },
-  };
-  const contentTransition = { delay: 1, duration: 0.2 };
-
-  const buttonVariants = {
-    hidden: { opacity: 0, x: 0, y: 0 },
-    visible: { opacity: 1, x: 0, y: 0 },
-  };
-  const buttonTransition = { delay: 1.3, duration: 0.2 };
-
-  const successVariants = {
-    hidden: { opacity: 0, x: 0, y: 50 },
-    visible: { opacity: 1, x: 0, y: 0 },
-  };
-  const successTransition = { delay: 1.6, duration: 0.2 };
-
   return (
     <section className={"bg-gradient-to-b from-[#0F151A] via-[#0F151A] via-90% to-[#171717] py-10"}>
       <motion.div
@@ -91,20 +103,20 @@ export const Hero = (): React.ReactNode => {
               className="mt-10 flex justify-center gap-x-16 text-center">
               <div>
                 Projects
-                <p className="mt-2 text-7xl font-extralight">05</p>
+                <AnimatedCounter value={5} className="mt-2 text-7xl font-extralight" />
               </div>
               <div>
                 Clients
-                <p className="mt-2 text-7xl font-extralight">05</p>
+                <AnimatedCounter value={5} className="mt-2 text-7xl font-extralight" />
               </div>
               <div>
                 Services
-                <p className="mt-2 text-7xl font-extralight">05</p>
+                <AnimatedCounter value={5} className="mt-2 text-7xl font-extralight" />
               </div>
             </motion.div>
           </div>
         </div>
-        <div className="relative mx-auto mt-16 flex w-[90%] flex-col gap-y-10 bg-transparent text-[#D9D9D9]">
+        <div className="relative mx-auto flex w-[90%] flex-col gap-y-10 bg-transparent pb-10 text-[#D9D9D9] lg:mt-12 xl:mt-16">
           <h1 className="text-center font-semibold lg:text-4xl xl:text-5xl">
             From building concept to launch we can help you at Every Stage
           </h1>

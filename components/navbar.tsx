@@ -7,7 +7,7 @@ const navLinks = [
   { name: "About Us", href: "/about-us" },
   { name: "Services", href: "/services" },
   { name: "Blogs", href: "/blogs" },
-  { name: "Let's Talk", href: "/contact-us" },
+  { name: "Let's Talk", href: "/lets-talk" },
 ];
 
 const navbarVariant = {

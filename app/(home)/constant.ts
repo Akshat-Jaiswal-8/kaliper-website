@@ -120,10 +120,31 @@ export const testimonials: { name: string; src: string; content: string }[] = [
   },
 ];
 
-export const faqs: { question: string }[] = [
-  { question: "What is the Incorporation date of KALIPER TECHNOLOGIES PRIVATE LIMITED?" },
-  { question: "What is authorized share capital of KALIPER TECHNOLOGIES PRIVATE LIMITED?" },
-  { question: "What is the paid-up capital of KALIPER TECHNOLOGIES  PRIVATE LIMITED?" },
-  { question: "What is the registered address of KALIPER TECHNOLOGIES PRIVATE LIMITED?" },
-  { question: "Who are the directors of KALIPER TECHNOLOGIES PRIVATE LIMITED?" },
+export const faqs = [
+  {
+    id: 1,
+    question: "What is the Incorporation date of KALIPER TECHNOLOGIES PRIVATE LIMITED?",
+    answer: "The Incorporation Date of KALIPER TECHNOLOGIES PRIVATE LIMITED is 19 March, 2023.",
+  },
+  {
+    id: 2,
+    question: "What is authorized share capital of KALIPER TECHNOLOGIES PRIVATE LIMITED?",
+    answer: "The authorized share capital of KALIPER TECHNOLOGIES PRIVATE LIMITED is INR 1.0 Lacs.",
+  },
+  {
+    id: 3,
+    question: "What is the paid-up capital of KALIPER TECHNOLOGIES  PRIVATE LIMITED?",
+    answer: "The paid up capital of the KALIPER TECHNOLOGIES PRIVATE LIMITED is INR 0.1 Lacs.",
+  },
+  {
+    id: 4,
+    question: "What is the registered address of KALIPER TECHNOLOGIES PRIVATE LIMITED?",
+    answer:
+      "The registered address of KALIPER TECHNOLOGIES PRIVATE LIMITED is PLOT NO 38, BHAGWAN DAS ,ALOK PURI KALYANPUR LKO, Lucknow Uttar Pradesh - 226022",
+  },
+  {
+    id: 5,
+    question: "Who are the directors of KALIPER TECHNOLOGIES PRIVATE LIMITED?",
+    answer: "Kaliper Technologies Private Limited has two directors -Amit Verma and Raju Pradeep",
+  },
 ];

@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export const Blogs = (): React.ReactNode => {
   return (
-    <section className={"mx-auto mt-14 w-[90%]"}>
+    <section className={"mx-auto w-[90%]"}>
       <div className={"flex flex-col items-center gap-y-4"}>
         <h1 className={"text-4xl"}>Latest Blog</h1>
         <p className={"text-lg"}>

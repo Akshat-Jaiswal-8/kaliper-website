@@ -80,7 +80,7 @@ export const Team = () => {
                       whileInView={"visible"}
                       transition={{ delay: 0.4, duration: 0.8 }}
                       key={index}
-                      className={""}>
+                      className={"z-20"}>
                       <Image
                         className={"h-full w-full"}
                         src={image.src}
