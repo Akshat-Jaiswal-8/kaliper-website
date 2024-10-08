@@ -34,10 +34,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-/.idea/.gitignore
-/.idea/git_toolbox_blame.xml
-/.idea/kaliper-website.iml
-/.idea/modules.xml
-/.idea/inspectionProfiles/Project_Default.xml
-/.idea/vcs.xml
-.idea
+/.idea/
