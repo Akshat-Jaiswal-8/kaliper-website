@@ -19,7 +19,7 @@ export const Address = (): React.ReactNode => {
             </div>
             <div>
               <h3 className={"mb-2 font-semibold"}>Email</h3>
-              <a href="amit.verma@kaliper.in">amit.verma@kaliper.in</a>
+              <a href="mailto:amit.verma@kaliper.in">amit.verma@kaliper.in</a>
             </div>
           </div>
           <div className={"flex flex-col gap-y-8 font-poppins"}>
