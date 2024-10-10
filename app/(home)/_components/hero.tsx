@@ -50,7 +50,7 @@ const AnimatedCounter = ({
   useEffect(() => {
     const controls = animate(count, value, { duration: duration, delay: 2 });
     return controls.stop;
-  }, [value, duration]);
+  }, [value, duration, count]);
 
   return <motion.div className={className}>{displayed}</motion.div>;
 };
@@ -106,15 +106,15 @@ export const Hero = (): React.ReactNode => {
                 whileInView="visible"
                 transition={successTransition}
                 className="mt-10 flex justify-center gap-x-16 text-center">
-                <div>
+                <div className={"min-w-24"}>
                   Projects
                   <AnimatedCounter value={5} className="mt-2 text-7xl font-extralight" />
                 </div>
-                <div>
+                <div className={"min-w-24"}>
                   Clients
                   <AnimatedCounter value={5} className="mt-2 text-7xl font-extralight" />
                 </div>
-                <div>
+                <div className={"min-w-24"}>
                   Services
                   <AnimatedCounter value={5} className="mt-2 text-7xl font-extralight" />
                 </div>
