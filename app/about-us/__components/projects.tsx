@@ -33,8 +33,8 @@ export const Projects = () => {
                 whileInView="visible"
                 transition={gradientTransition}
                 className={cn(
-                  "absolute h-[80%] w-[50%] rounded-full bg-[#8AA2D0] bg-opacity-50 blur-[20rem]",
-                  index === 4 ? "-right-10" : "-left-44",
+                  "absolute h-[80%] w-[50%] rounded-full bg-[#8AA2D0] bg-opacity-50 blur-[10rem]",
+                  index === 4 ? "-right-10" : "-left-24 -top-10",
                 )}
               />
             )}

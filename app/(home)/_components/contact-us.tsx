@@ -6,17 +6,17 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const ContactUs = (): React.ReactNode => {
   return (
-    <section className={"mx-auto mb-52 mt-20 w-[90%] px-6"}>
-      <h1 className={"mb-16 text-center text-5xl font-semibold text-slate-400"}>
+    <section className={"mx-auto mb-32 mt-20 w-[90%] px-6"}>
+      <h1 className={"mb-12 text-center text-5xl font-semibold text-slate-400"}>
         Success Stories of our clients
       </h1>
-      <div className={"flex h-[70vh] w-full"}>
+      <div className={"flex h-[78vh] w-full justify-between"}>
         <div
           className={
-            "flex flex-col justify-between rounded-xl border border-[#41557280] border-opacity-50 bg-gradient-to-r from-[#41557226] to-[#1B1B1E1A] p-8 lg:w-[55%]"
+            "flex flex-col justify-between rounded-xl border border-[#41557280] border-opacity-50 bg-gradient-to-r from-[#41557226] to-[#1B1B1E1A] p-8 lg:w-[50%]"
           }>
-          <div className={"mb-10 flex h-full flex-col justify-between"}>
-            <h1 className={"text-4xl font-semibold leading-relaxed"}>
+          <div className={"flex h-full flex-col justify-between"}>
+            <h1 className={"font-semibold leading-relaxed lg:text-3xl xl:text-4xl"}>
               Let&apos;s Build something great together.
             </h1>
             <div className={"flex justify-between"}>
@@ -24,14 +24,14 @@ export const ContactUs = (): React.ReactNode => {
                 type={"text"}
                 placeholder={"First Name"}
                 className={
-                  "border-b border-b-[#41557240] bg-transparent pb-2 text-sm focus:border-b-[#41557240] focus:outline-none"
+                  "w-[40%] border-b border-b-[#41557240] bg-transparent pb-2 text-sm focus:border-b-[#41557240] focus:outline-none"
                 }
               />
               <input
                 type={"text"}
                 placeholder={"Last Name"}
                 className={
-                  "border-b border-b-[#41557240] bg-transparent pb-2 text-sm focus:border-b-[#41557240] focus:outline-none"
+                  "w-[40%] border-b border-b-[#41557240] bg-transparent pb-2 text-sm focus:border-b-[#41557240] focus:outline-none"
                 }
               />
             </div>
@@ -46,14 +46,14 @@ export const ContactUs = (): React.ReactNode => {
                 type={"text"}
                 placeholder={"Email"}
                 className={
-                  "border-b border-b-[#41557240] bg-transparent pb-2 text-sm focus:border-b-[#41557240] focus:outline-none"
+                  "w-[40%] border-b border-b-[#41557240] bg-transparent pb-2 text-sm focus:border-b-[#41557240] focus:outline-none"
                 }
               />
               <input
                 type={"text"}
                 placeholder={"Phone Number"}
                 className={
-                  "border-b border-b-[#41557240] bg-transparent pb-2 text-sm focus:border-b-[#41557240] focus:outline-none"
+                  "w-[40%] border-b border-b-[#41557240] bg-transparent pb-2 text-sm focus:border-b-[#41557240] focus:outline-none"
                 }
               />
             </div>
@@ -70,7 +70,7 @@ export const ContactUs = (): React.ReactNode => {
             </div>
           </div>
         </div>
-        <div className="mx-auto h-full lg:w-[35%]">
+        <div className="mx-auto h-full lg:w-[40%]">
           <div className="relative flex h-full flex-col justify-around">
             {testimonials.map((testimonial, index) => (
               <div key={index} className={"group"}>
@@ -95,7 +95,7 @@ export const ContactUs = (): React.ReactNode => {
               </div>
             ))}
           </div>
-          <div className={"mt-10 flex justify-center gap-x-4"}>
+          <div className={"flex justify-center gap-x-4"}>
             <ChevronLeft size={32} color={"#50C2FA"} className={"rounded-full border bg-white"} />
             <ChevronRight size={32} color={"#50C2FA"} className={"rounded-full border bg-white"} />
           </div>

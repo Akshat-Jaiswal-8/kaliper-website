@@ -18,102 +18,100 @@ const gradientTransition = { delay: 0.4, duration: 0.3 };
 
 export const Features = (): React.ReactNode => {
   return (
-    <section className="relative mt-10 h-full w-full px-6">
+    <section className="relative h-full w-full bg-gradient-to-b from-[#0F151A] from-0% via-[#171717] via-5% to-[#171717] to-100% px-6">
       <motion.div
         variants={gradientVariants}
         initial={"hidden"}
         animate={"visible"}
         transition={gradientTransition}
         className={
-          "absolute -left-[20%] h-[90%] w-[80%] rounded-full bg-[#8AA2D0] bg-opacity-30 blur-[20rem]"
+          "absolute -left-[20%] -top-20 h-[90%] w-[80%] rounded-full bg-[#8AA2D0] bg-opacity-30 blur-[20rem]"
         }
       />
-      <div className="mx-auto">
-        <div className="mx-auto flex max-w-screen-lg justify-between">
-          <div className="flex flex-col">
-            {features.slice(0, 3).map((eachFeature, index) => (
-              <motion.div
-                variants={featureVariants}
-                initial={"hidden"}
-                animate={"visible"}
-                transition={{ delay: index + 1 - 0.5, duration: 0.8 }}
-                key={index}
-                className="relative my-20">
-                <Image
-                  height={600}
-                  width={600}
-                  className="relative rotate-180"
-                  src="/svg/features-border.svg"
-                  alt="feature border"
-                />
-                <div className="absolute inset-0 flex justify-end">
-                  <div className={"absolute right-32 top-2 flex flex-col text-xs"}>
-                    <span className="my-4 text-end text-sm font-semibold">{eachFeature.title}</span>
-                    <span className="px-4 text-end text-gray-300">{eachFeature.description}</span>
-                  </div>
-                  <div className={"relative h-24 w-24"}>
-                    <Image
-                      src={"/webp/feature-icon-background.webp"}
-                      height={150}
-                      width={150}
-                      alt={"feature icon background"}
-                      className={"absolute right-8 top-7 rounded-full opacity-20"}
-                    />
-                    <Image
-                      className="absolute right-12 top-8"
-                      src={eachFeature.icon}
-                      alt="icon"
-                      width={70}
-                      height={70}
-                    />
-                  </div>
+      <div className="mx-auto flex max-w-screen-lg pt-10 lg:gap-x-8 xl:max-w-screen-xl xl:gap-x-10">
+        <div className="flex w-full flex-col">
+          {features.slice(0, 3).map((eachFeature, index) => (
+            <motion.div
+              variants={featureVariants}
+              initial={"hidden"}
+              animate={"visible"}
+              transition={{ delay: index + 1 - 0.5, duration: 0.8 }}
+              key={index}
+              className="relative my-20 w-full">
+              <img
+                className="relative w-full lg:h-32 xl:h-36"
+                src="/png/feature-border.png"
+                alt="feature border"
+              />
+              <div className="absolute inset-0 flex items-center justify-end">
+                <div className={"absolute right-32 flex flex-col pb-2 text-xs"}>
+                  <span className="my-2 text-end text-sm font-semibold text-[#868A8D]">
+                    {eachFeature.title}
+                  </span>
+                  <span className="text-end font-extralight text-[#D2F0FF]">
+                    {eachFeature.description}
+                  </span>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-          <div className="flex flex-col">
-            {features.slice(3, 6).map((eachFeature: features, index: number) => (
-              <motion.div
-                variants={featureVariants}
-                initial={"hidden"}
-                animate={"visible"}
-                transition={{ delay: index + 1, duration: 0.8 }}
-                key={index}
-                className={cn("relative my-10", index === 0 && "mt-0")}>
-                <Image
-                  height={600}
-                  width={600}
-                  className="relative"
-                  src="/svg/features-border.svg"
-                  alt="feature border"
-                />
-                <div className={"relative h-24 w-24"}>
+                <div className={"relative -left-4 h-24 w-24"}>
                   <Image
                     src={"/webp/feature-icon-background.webp"}
                     height={150}
                     width={150}
                     alt={"feature icon background"}
-                    className={"absolute -top-[7rem] left-8 rounded-full opacity-20"}
+                    className={"absolute my-auto rounded-full opacity-20"}
                   />
                   <Image
-                    className="absolute -top-[6.2rem] left-10"
+                    className="absolute left-2 top-2"
                     src={eachFeature.icon}
                     alt="icon"
                     width={70}
                     height={70}
                   />
                 </div>
-                <div className="absolute inset-0 flex justify-end">
-                  <div className={"absolute left-32 top-2 flex flex-col text-xs"}>
-                    <span className="my-4 text-start text-sm font-semibold">
-                      {eachFeature.title}
-                    </span>
-                    <span className="px-4 text-start text-gray-300">{eachFeature.description}</span>
-                  </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        <div className="flex w-full flex-col">
+          {features.slice(3, 6).map((eachFeature, index) => (
+            <motion.div
+              variants={featureVariants}
+              initial={"hidden"}
+              animate={"visible"}
+              transition={{ delay: index + 1, duration: 0.8 }}
+              key={index}
+              className={cn("relative my-16", index === 0 && "mt-0")}>
+              <img
+                className="relative w-full lg:h-32 xl:h-36"
+                src="/png/feature-border-rotated.png"
+                alt="feature border"
+              />
+              <div className="absolute inset-0 flex items-center">
+                <div className={"relative left-[6%] h-24 w-24"}>
+                  <Image
+                    src={"/webp/feature-icon-background.webp"}
+                    height={150}
+                    width={150}
+                    alt={"feature icon background"}
+                    className={"absolute my-auto rounded-full opacity-20"}
+                  />
+                  <Image
+                    className="absolute left-2 top-2"
+                    src={eachFeature.icon}
+                    alt="icon"
+                    width={70}
+                    height={70}
+                  />
                 </div>
-              </motion.div>
-            ))}
-          </div>
+                <div className={"absolute left-[30%] flex flex-col pb-2 text-xs"}>
+                  <span className="my-2 text-sm font-semibold text-[#868A8D]">
+                    {eachFeature.title}
+                  </span>
+                  <span className="font-extralight text-[#D2F0FF]">{eachFeature.description}</span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

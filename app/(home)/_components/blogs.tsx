@@ -8,17 +8,17 @@ export const Blogs = (): React.ReactNode => {
   return (
     <section className={"mx-auto w-[90%]"}>
       <div className={"flex flex-col items-center gap-y-4"}>
-        <h1 className={"text-4xl"}>Latest Blog</h1>
+        <h1 className={"text-4xl font-bold"}>Latest Blog</h1>
         <p className={"text-lg"}>
           Insightful articles and update latest trends in project management.
         </p>
       </div>
-      <div className={"my-20 flex items-center justify-between px-4"}>
+      <div className={"my-16 mb-32 flex items-center justify-around gap-x-10 px-4"}>
         {[...Array(3)].map((_, index) => (
           <div key={index} className={"mx-auto mt-10 items-center"}>
             <div
               className={cn(
-                "relative mx-auto flex flex-col justify-between rounded-[20px] border-x border-b border-[#41557280] lg:max-w-[16rem] xl:max-w-xs",
+                "relative mx-auto flex flex-col justify-between rounded-2xl border-x border-b border-[#41557280] lg:max-w-[16rem] xl:max-w-xs",
                 index === 3 % 2 && "scale-125",
               )}>
               <Image
@@ -51,7 +51,7 @@ export const Blogs = (): React.ReactNode => {
       </div>
       <button
         className={
-          "mx-auto mt-32 flex justify-center rounded-full border border-[#E6E6E60D] bg-[#E6E6E60D] px-4 py-2"
+          "mx-auto flex justify-center rounded-full border border-[#E6E6E60D] bg-[#E6E6E60D] px-4 py-2"
         }>
         <Link className={"font-inter"} href={"/"}>
           More Articles
