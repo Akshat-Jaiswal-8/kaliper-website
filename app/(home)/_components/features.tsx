@@ -38,7 +38,9 @@ export const Features = (): React.ReactNode => {
               transition={{ delay: index + 1 - 0.5, duration: 0.8 }}
               key={index}
               className="relative my-20 w-full">
-              <img
+              <Image
+                height={100}
+                width={100}
                 className="relative w-full lg:h-32 xl:h-36"
                 src="/png/feature-border.png"
                 alt="feature border"

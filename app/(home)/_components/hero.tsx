@@ -66,19 +66,19 @@ export const Hero = (): React.ReactNode => {
           transition={gradientTransition}
           className="absolute -top-40 left-[24%] h-[60%] w-[50%] rounded-full bg-[#8AA2D0] bg-opacity-50 blur-[8rem]"
         />
-        <div className="relative z-40 min-h-[100vh] w-full overflow-hidden bg-hero-background bg-center blur-0">
+        <div className="relative z-10 min-h-[100vh] w-full overflow-hidden bg-hero-background bg-center blur-0">
           <div className="hero-gradient mx-auto flex min-h-[85vh] w-[90%] flex-col justify-between rounded-xl">
             <div
               className={
-                "flex w-full flex-grow flex-col items-center justify-around gap-y-10 py-4"
+                "flex w-full flex-grow flex-col items-center justify-between gap-y-12 py-6"
               }>
-              <div className={"flex w-full flex-col gap-y-10"}>
+              <div className={"flex w-full flex-col gap-y-12"}>
                 <motion.h1
                   variants={headingVariants}
                   initial="hidden"
                   whileInView="visible"
                   transition={headingTransition}
-                  className="mx-auto text-center font-prompt font-bold leading-normal text-slate-100 lg:text-4xl xl:text-5xl">
+                  className="mx-auto text-center font-prompt font-bold !leading-tight text-[#ECECEC] lg:text-5xl xl:text-5xl">
                   Transforming ideas <p>into impact, you trusted</p>
                 </motion.h1>
                 <motion.h1
@@ -95,7 +95,7 @@ export const Hero = (): React.ReactNode => {
                 initial="hidden"
                 whileInView="visible"
                 transition={buttonTransition}
-                className="rounded-full border border-white/10 p-4 lg:h-16 lg:w-52 xl:h-20 xl:w-60">
+                className="rounded-full border border-white/10 p-4 lg:h-16 lg:w-52 xl:h-16 xl:w-52">
                 <Link className="text-xl" href="/lets-talk">
                   Connect with us
                 </Link>
@@ -129,9 +129,8 @@ export const Hero = (): React.ReactNode => {
             </h1>
             <p className="mx-auto w-[90%] text-center text-lg leading-normal">
               We guide you through every stage of your project, from the initial concept to the
-              final launch. Our expert <br />
-              team is dedicated to providing tailored solutions, ensuring a smooth process and
-              successful outcomes.
+              final launch. Our expert team is dedicated to providing tailored solutions, ensuring a
+              smooth process and successful outcomes.
             </p>
           </div>
         </div>
