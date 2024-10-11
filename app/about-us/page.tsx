@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Projects } from "@/app/about-us/__components/projects";
 import Link from "next/link";
 import { Footer } from "@/app/(home)/_components/footer";
+import { CircleArrowLeft } from "lucide-react";
 
 const aboutUsNavLinks = [
   { name: "Client Testimonials", href: "#testimonials" },
@@ -26,6 +27,9 @@ const AboutUs = () => {
               className={
                 "relative mx-auto flex w-[70%] justify-around py-24 font-semibold lg:text-2xl xl:text-3xl"
               }>
+              <Link href={"/"}>
+                <CircleArrowLeft strokeWidth={1} size={35} color={"#9C9C9C"} />
+              </Link>
               {aboutUsNavLinks.map((eachNav, index) => (
                 <Link
                   replace

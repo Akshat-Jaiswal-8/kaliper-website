@@ -1,14 +1,20 @@
 import Image from "next/image";
 import React from "react";
+import { Footer } from "@/app/(home)/_components/footer";
+import { CircleArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 const page = () => {
   return (
     <main className="relative overflow-hidden">
-      <div className="absolute -top-44 left-[25%] h-[40%] w-[40%] rounded-full bg-[#0F151A] bg-opacity-50 blur-[70px]" />
+      <div className="absolute -top-[25rem] left-[25%] h-[40%] w-[40%] rounded-full bg-[#0F151A] bg-opacity-50 blur-[70px]" />
+      <div className="absolute -top-[25rem] left-[25%] h-[40%] w-[40%] rounded-full bg-[#8AA2D0] bg-opacity-30 blur-[10rem]" />
       <div className="absolute -right-52 top-[20%] h-[30%] w-[30%] rounded-full bg-[#0F151A] bg-opacity-70 blur-[70px]" />
       <div className="absolute -right-52 top-[20%] h-[30%] w-[30%] rounded-full bg-[#8AA2D0] bg-opacity-50 blur-[15rem]" />
       <div className="absolute -left-20 top-60 h-[50%] w-[80%] rounded-full bg-[#0F151A] bg-opacity-70 blur-[70px]" />
-
+      <Link href={"/about-us"}>
+        <CircleArrowLeft strokeWidth={1} size={35} className={"mx-8 mt-8"} color={"#9C9C9C"} />
+      </Link>
       <div className={"container relative z-10 mx-auto flex w-[85%] flex-col items-center"}>
         <div className="2xl:py-25 space-y-5 py-10 lg:py-20">
           <h1 className="text-[45px] font-bold text-[#7670CE]">
@@ -64,6 +70,7 @@ const page = () => {
           </div>
         </article>
       </div>
+      <Footer />
     </main>
   );
 };

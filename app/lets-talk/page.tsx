@@ -1,5 +1,7 @@
 "use client";
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import { CircleArrowLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface FormData {
   firstName: string;
@@ -11,6 +13,8 @@ interface FormData {
 }
 
 const Page: React.FC = () => {
+  const router = useRouter();
+
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -29,6 +33,10 @@ const Page: React.FC = () => {
     console.log("Form submitted:", formData);
   };
 
+  const handleBack = () => {
+    router.back();
+  };
+
   return (
     <div className="container relative overflow-hidden bg-[#171717]">
       <div className="absolute left-[25%] h-[40%] w-[40%] rounded-full bg-[#0F151A] blur-[70px]" />
@@ -36,7 +44,10 @@ const Page: React.FC = () => {
       <div className="absolute -bottom-[20rem] -left-[16rem] h-full w-full rounded-tr-full bg-[#0F151A] bg-opacity-60 blur-[70px]" />
       <div className="absolute -bottom-20 -right-20 h-[50%] w-[20%] rounded-tr-full bg-[#8AA2D0] bg-opacity-50 blur-[8rem]" />
       <div className="absolute -bottom-20 -right-20 h-[80%] w-[20%] rounded-tr-full bg-[#0F151A] bg-opacity-60 blur-[80px]" />
-      <div className={"relative z-10 m-auto flex h-[100vh] w-[90%] items-center"}>
+      <button onClick={handleBack}>
+        <CircleArrowLeft strokeWidth={1} size={35} className={"mx-8 mt-4"} color={"#9C9C9C"} />
+      </button>
+      <div className={"relative z-10 m-auto flex h-[90vh] w-[90%] items-center"}>
         <div className={"m-auto flex gap-x-14"}>
           <div className="flex-1 space-y-5">
             <h2 className="bg-gradient-to-r from-[#4AC7FA] to-[#E649F5] bg-clip-text font-bold !leading-relaxed text-transparent lg:text-[2rem] xl:text-5xl">
