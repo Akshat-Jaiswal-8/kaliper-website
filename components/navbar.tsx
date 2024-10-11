@@ -1,14 +1,9 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-const navLinks = [
-  { name: "About Us", href: "/about-us" },
-  { name: "Services", href: "/services" },
-  { name: "Blogs", href: "/blogs" },
-  { name: "Let's Talk", href: "/lets-talk" },
-];
+import { Hamburger } from "@/app/(home)/_components/hamburger";
 
 const navbarVariant = {
   hidden: { opacity: 0, x: 0, y: 0 },
@@ -21,23 +16,54 @@ const navTransition = {
 };
 
 export const Navbar = (): React.ReactNode => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+      document.body.style.height = "100%";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
+    };
+  }, [isMenuOpen]);
+
+  const handleHamburgerMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <motion.div
-      variants={navbarVariant}
-      initial={"hidden"}
-      animate={"visible"}
-      transition={navTransition}
-      className={"flex items-center justify-between px-16 py-3 font-montserrat text-lg"}>
-      <div className={"relative h-10 w-28"}>
-        <Image src={"/webp/logo.webp"} alt={"kaliper logo"} fill />
-      </div>
-      <div className={"flex gap-x-12"}>
-        {navLinks.map((navElement) => (
-          <Link href={navElement.href} key={navElement.name}>
-            {navElement.name}
+    <>
+      <motion.div
+        variants={navbarVariant}
+        initial={"hidden"}
+        animate={"visible"}
+        transition={navTransition}
+        className={"flex h-[10vh] items-center justify-between px-8 font-montserrat text-lg"}>
+        <div className={"relative h-14 w-28"}>
+          <Image src={"/png/logo.png"} alt={"kaliper logo"} fill />
+        </div>
+        <div className={"flex items-center gap-x-2"}>
+          <Link className={"text-base font-light text-[#ECECEC]"} href={"/lets-talk"}>
+            Let&apos;s Talk
           </Link>
-        ))}
-      </div>
-    </motion.div>
+          <button onClick={handleHamburgerMenuClick}>
+            <Image
+              className={"cursor-pointer"}
+              height={80}
+              width={80}
+              src={"/png/hamburger.png"}
+              alt={"hamburger menu"}
+            />
+          </button>
+        </div>
+      </motion.div>
+      <Hamburger isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+    </>
   );
 };

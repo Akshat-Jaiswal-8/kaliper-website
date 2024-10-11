@@ -13,9 +13,7 @@ export const Faqs = () => {
 
   return (
     <div className={"lg:w-[80%] xl:w-[70%]"}>
-      <h1 className="mb-20 font-poppins font-bold lg:text-4xl xl:text-5xl">
-        Frequently Asked Questions
-      </h1>
+      <h1 className="mb-20 font-bold lg:text-4xl xl:text-5xl">Frequently Asked Questions</h1>
       <div className="flex flex-col gap-y-8">
         {faqs.map((faq) => (
           <div
