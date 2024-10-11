@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const founders = [
-  { src: "/svg/pradeep.svg", alt: "pradeep sir image" },
-  { src: "/svg/pradeep.svg", alt: "pradeep sir image" },
+  { src: "/svg/amit.svg", alt: "amit" },
+  { src: "/svg/pradeep.svg", alt: "pradeep" },
 ];
 const engineers = [
   { src: "/svg/varsha.svg", alt: "varsha" },
@@ -45,7 +45,7 @@ export const Team = () => {
   return (
     <AnimatePresence>
       <section className="mt-20">
-        <div className="w-full">
+        <div className="h-full w-full">
           <div className="mx-auto flex w-[90%] flex-col rounded-2xl bg-[#D4E2FF12] py-6 text-center">
             <motion.div
               variants={headerVariants}
@@ -64,7 +64,7 @@ export const Team = () => {
               </h2>
             </motion.div>
             <div className={"flex h-full flex-col items-center justify-between px-6"}>
-              <div className={"mt-20 flex w-full items-center"}>
+              <div className={"flex w-full items-center"}>
                 <div className="m-auto flex flex-col font-bold lg:text-3xl xl:text-4xl">
                   {"FOUNDERS".split("").map((letter, index) => (
                     <span key={index} className="mx-6 text-center">

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { Inter, Montserrat, Poppins, Prompt } from "next/font/google";
 import React from "react";
+import SmoothScroller from "@/components/SmoothScroll";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -48,7 +49,8 @@ export default function RootLayout({
         <title>Kaliper - Your IT Consulting Partner</title>
       </head>
       <body
-        className={`${montserrat.variable} ${prompt.variable} ${poppins.variable} ${inter.variable} bg-[#171717] font-montserrat antialiased`}>
+        className={`${montserrat.variable} ${prompt.variable} ${poppins.variable} ${inter.variable} bg-[#171717] font-montserrat`}>
+        <SmoothScroller />
         {children}
         <Analytics />
       </body>
