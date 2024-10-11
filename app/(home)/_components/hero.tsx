@@ -121,18 +121,9 @@ export const Hero = (): React.ReactNode => {
               </motion.div>
             </div>
           </div>
-          <div className="relative mx-auto flex w-[90%] flex-col gap-y-10 bg-transparent pb-10 text-[#D9D9D9] lg:mt-12 xl:mt-16">
-            <h1 className="text-center font-semibold lg:text-4xl xl:text-5xl">
-              From building concept to launch we help
-              <br />
-              you at Every Stage
-            </h1>
-            <p className="mx-auto w-[90%] text-center text-lg leading-normal">
-              We guide you through every stage of your project, from the initial concept to the
-              final launch. Our expert team is dedicated to providing tailored solutions, ensuring a
-              smooth process and successful outcomes.
-            </p>
-          </div>
+          <h1 className="text-center font-semibold text-[#D9D9D9] lg:mt-12 lg:text-4xl xl:mt-16 xl:text-5xl">
+            “Providing support at every milestone.”
+          </h1>
         </div>
       </section>
     </>

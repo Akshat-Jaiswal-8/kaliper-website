@@ -1,67 +1,77 @@
-import { Card } from "@/components/ui/card";
+"use client";
 import Image from "next/image";
 import React from "react";
 import { services } from "@/app/services/constant";
 import Link from "next/link";
+import { Footer } from "@/app/(home)/_components/footer";
+import { CircleArrowLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
+  const router = useRouter();
+
+  const handleBack = () => {
+    router.back();
+  };
   return (
-    <div className="relative mx-auto overflow-hidden">
+    <div className="container relative overflow-hidden">
       <div className="absolute -top-20 h-[20%] w-[40rem] rounded-full bg-[#0F151A] bg-opacity-70 blur-3xl lg:left-[22%] xl:left-[28%]" />
+      <div className="absolute -top-52 h-[20%] w-[40rem] rounded-b-full bg-[#8AA2D0] bg-opacity-30 blur-[10rem] lg:left-[22%] xl:left-[28%]" />
       <div className="absolute -left-20 top-[20%] h-[40%] w-[80%] rounded-full bg-[#0F151A] bg-opacity-70 blur-[70px]" />
-      <div className={"relative z-10 px-5 text-white lg:px-40 lg:py-20"}>
-        <h2 className="mx-auto max-w-screen-xl bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500 bg-clip-text py-2 font-montserrat font-bold text-transparent lg:text-6xl">
+      <button onClick={handleBack}>
+        <CircleArrowLeft strokeWidth={1} size={35} className={"mt-10"} color={"#9C9C9C"} />
+      </button>
+      <div className={"relative z-10 my-20 text-white"}>
+        <h2 className="mx-auto mb-10 bg-gradient-to-r from-[#4AC7FA] to-[#E649F5] bg-clip-text font-montserrat text-4xl font-bold text-transparent">
           Our Services
         </h2>
-        <h2 className="mx-auto mb-4 mt-10 max-w-screen-xl text-xl font-semibold lg:text-4xl">
-          Innovative IT Solutions
-        </h2>
-        <p className="mx-auto mb-8 max-w-screen-xl font-semibold lg:text-4xl">
-          Expert Consulting for Your Business Growth.
-        </p>
-        <p className="mx-auto mb-8 mt-8 max-w-screen-xl text-[20px] font-extralight text-[#ECECEC]">
+        <div className={"flex flex-col gap-y-4 text-4xl font-semibold text-[#ECECEC]"}>
+          <h2>Innovative IT Solutions</h2>
+          <h2>Expert Consulting for Your Business Growth.</h2>
+        </div>
+        <p className="mx-auto my-10 font-light !leading-normal text-[#ECECEC] lg:text-3xl xl:text-[2rem]">
           We provide tailored IT consulting services designed to meet your business&apos;s unique
           needs. With expertise across industries, we deliver innovative solutions that drive
           efficiency, scalability, and growth. Whether it&apos;s technology strategy,
           implementation, or optimization, we’re here to support your success.
         </p>
-        <div className="mx-auto grid max-w-screen-xl grid-cols-1 gap-4 gap-y-16 lg:grid-cols-3">
+        <div className="mx-auto my-32 grid w-[90%] gap-14 lg:grid-cols-2 xl:grid-cols-3">
           {services.map((service) => (
-            <Card
+            <div
               key={service.title}
-              className="mx-auto flex h-[300px] flex-col rounded-2xl border-gray-800 bg-transparent p-5 shadow-lg lg:max-w-xs">
+              className="mx-auto flex flex-col gap-y-2 rounded-2xl border border-[#415572] border-opacity-50 bg-transparent px-4 pb-4 pt-10 shadow-lg lg:h-52 lg:w-96 xl:h-52 xl:w-[22rem]">
               <div className="flex items-center justify-between">
-                <h3 className="mt-10 text-lg font-bold text-white">{service.title}</h3>
+                <h3 className="my-auto text-base font-medium text-white">{service.title}</h3>
                 <Image
-                  width={96}
-                  height={96}
+                  width={80}
+                  height={60}
                   src={service.imgSrc}
                   alt={service.title}
-                  className="mb-4 h-24 w-24"
+                  className="lg:h-16 lg:w-20"
                 />
               </div>
-              <div className="flex-grow">
-                <p className="mt-2 text-sm font-thin text-[#ECECEC]">{service.description}</p>
+              <div>
+                <p className="text-xs font-light text-[#ECECEC]">{service.description}</p>
               </div>
               <div className="mt-auto flex justify-end">
                 <Link
                   href={"/lets-talk"}
-                  className="shadow-b rounded border-[1px] border-white bg-transparent px-4 py-2 text-white transition duration-300 hover:border-[#153982] hover:bg-[#153982] hover:shadow">
+                  className="shadow-b rounded border-[0.35px] border-[#FFFFF] px-2 py-1 text-xs text-white transition-all duration-300 hover:border-[#153982] hover:bg-[#153982] hover:shadow">
                   Let&apos;s Talk
                 </Link>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
 
         <div className="mt-20">
-          <div className="relative mx-auto max-w-6xl">
+          <div className="relative mx-auto">
             <div className="absolute mx-auto h-full w-full rounded-full bg-[#0F151A] bg-opacity-70 blur-[70px]" />
             <div className={"relative z-10"}>
-              <p className="text-white lg:text-5xl">
-                Turning Ideas Into Impactful Design Solutions
+              <p className="font-semibold !leading-normal text-white lg:text-4xl">
+                Turning Ideas Into Impactful Design <br /> Solutions
               </p>
-              <p className="mt-10 font-montserrat font-thin text-[#ECECEC] lg:text-lg">
+              <p className="mt-8 font-light !leading-normal text-[#ECECEC] lg:text-2xl">
                 We transform complex challenges into intuitive and engaging user experiences. Our
                 expertise in design turns abstract concepts into clear, effective solutions that
                 drive business results.
@@ -69,36 +79,40 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="relative mx-auto mt-20 w-[80%]">
+          <div className="relative mx-auto mt-20 w-[90%]">
             <div className="absolute -left-[25rem] bottom-16 h-[80%] w-[80%] rounded-br-full rounded-tr-full bg-[#8AA2D0] bg-opacity-30 blur-[12rem]" />
-            <div className={"relative z-10 flex flex-col justify-center"}>
-              <div className="mx-auto mt-10 flex flex-col gap-20 lg:flex-row">
-                <div className="flex max-w-lg flex-col">
-                  <p className="font-semibold lg:text-4xl">Innovative Design & Technology</p>
-                  <p className="mt-10 font-montserrat font-thin lg:text-lg">
+            <div className={"relative z-10 flex flex-col items-center gap-20"}>
+              <div className="flex gap-x-10 xl:gap-x-20">
+                <div className="flex max-w-md flex-col">
+                  <p className="font-semibold lg:text-3xl xl:text-4xl">
+                    Innovative Design & Technology
+                  </p>
+                  <p className="mt-12 font-light lg:text-lg">
                     We craft cutting-edge solutions that push technological boundaries and connect
                     businesses with lasting impact.
                   </p>
                 </div>
-                <div className="flex max-w-lg flex-col">
-                  <p className="font-semibold lg:text-4xl">Tailored Approach</p>
-                  <p className="mt-10 font-montserrat font-thin lg:text-lg">
+                <div className="flex max-w-md flex-col">
+                  <p className="font-semibold lg:text-3xl xl:text-4xl">Tailored Approach</p>
+                  <p className="mt-20 font-light lg:text-lg">
                     Our flexible consulting process adapts to the unique needs of each project,
                     ensuring the best strategies and outcomes.
                   </p>
                 </div>
               </div>
-              <div className="mx-auto mt-24 flex flex-col gap-20 lg:flex-row">
-                <div className="flex max-w-lg flex-col">
-                  <p className="font-semibold lg:text-4xl">Ethics & Integrity</p>
-                  <p className="mt-10 font-montserrat font-thin lg:text-lg">
+              <div className="flex gap-x-10 xl:gap-x-20">
+                <div className="flex max-w-md flex-col">
+                  <p className="font-semibold lg:text-3xl xl:text-4xl">Ethics & Integrity</p>
+                  <p className="mt-20 font-light lg:text-lg xl:text-xl">
                     We prioritize ethical practices and ensure our solutions are inclusive and
                     accessible, providing equal opportunities for all.
                   </p>
                 </div>
-                <div className="flex max-w-lg flex-col">
-                  <p className="font-semibold lg:text-4xl">Proven Expertise Across Industries</p>
-                  <p className="mt-10 font-montserrat font-thin lg:text-lg">
+                <div className="flex max-w-md flex-col">
+                  <p className="font-semibold lg:text-3xl xl:text-4xl">
+                    Proven Expertise Across Industries
+                  </p>
+                  <p className="mt-10 font-light lg:text-lg">
                     With years of experience, Kaliper Technologies is the trusted partner for
                     delivering successful IT solutions across a variety of industries.
                   </p>
@@ -108,6 +122,7 @@ const Page = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

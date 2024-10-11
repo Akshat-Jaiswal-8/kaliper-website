@@ -46,16 +46,13 @@ export const Team = () => {
     <AnimatePresence>
       <section className="mt-20">
         <div className="h-full w-full">
-          <div className="mx-auto flex w-[90%] flex-col rounded-2xl bg-[#D4E2FF12] py-6 text-center">
+          <div className="mx-auto flex h-[90%] w-[90%] flex-col rounded-2xl bg-[#D4E2FF12] py-6 text-center">
             <motion.div
               variants={headerVariants}
               initial={"hidden"}
               animate={"visible"}
               transition={{ delay: 0.4, duration: 0.8 }}
               className="flex w-full flex-col gap-y-4">
-              <h3 className="mx-auto text-center font-montserrat text-xl text-slate-100 text-opacity-85">
-                Team Section
-              </h3>
               <h1 className="mx-auto w-2/3 text-center font-bold lg:text-5xl xl:text-6xl">
                 Meet the team
               </h1>
