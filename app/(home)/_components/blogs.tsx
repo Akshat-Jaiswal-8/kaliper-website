@@ -50,6 +50,7 @@ export const Blogs = (): React.ReactNode => {
         ))}
       </div>
       <button
+        aria-label={"More Articles"}
         className={
           "mx-auto flex justify-center rounded-full border border-[#E6E6E60D] bg-[#E6E6E60D] px-4 py-2"
         }>

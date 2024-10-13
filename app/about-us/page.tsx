@@ -1,17 +1,37 @@
+"use client";
 import React from "react";
 import { testimonial } from "@/app/about-us/constant";
 import Image from "next/image";
 import { Projects } from "@/app/about-us/__components/projects";
-import Link from "next/link";
 import { Footer } from "@/app/(home)/_components/footer";
 import { CircleArrowLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
 
-const aboutUsNavLinks = [
+type aboutUsNavLinksProps = {
+  name: string;
+  href: string;
+};
+
+const aboutUsNavLinks: aboutUsNavLinksProps[] = [
   { name: "Client Testimonials", href: "#testimonials" },
   { name: "Our Projects", href: "#projects" },
 ];
 
-const AboutUs = () => {
+const AboutUs = (): React.ReactNode => {
+  const router = useRouter();
+
+  const handleBack = () => {
+    router.back();
+  };
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLButtonElement>, targetId: string) => {
+    e.preventDefault();
+
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
       <section id={"about-us"} className={"container mx-auto overflow-hidden"}>
@@ -25,22 +45,24 @@ const AboutUs = () => {
           <div className={"relative mb-20"}>
             <nav
               className={
-                "relative mx-auto flex w-[70%] justify-around py-24 font-semibold lg:text-2xl xl:text-3xl"
+                "relative flex w-[70%] items-center justify-between py-24 font-semibold lg:text-2xl xl:text-3xl"
               }>
-              <Link href={"/"}>
+              <button onClick={handleBack}>
                 <CircleArrowLeft strokeWidth={1} size={35} color={"#9C9C9C"} />
-              </Link>
-              {aboutUsNavLinks.map((eachNav, index) => (
-                <Link
-                  replace
-                  href={eachNav.href}
-                  className={
-                    "cursor-pointer transition-all duration-300 ease-linear hover:text-[#7670CE]"
-                  }
-                  key={index}>
-                  {eachNav.name}
-                </Link>
-              ))}
+              </button>
+              <div className={"flex items-center gap-x-16"}>
+                {aboutUsNavLinks.map((eachNav, index) => (
+                  <button
+                    onClick={(e) => handleSmoothScroll(e, eachNav.href.substring(1))}
+                    role={"link"}
+                    className={
+                      "cursor-pointer !scroll-smooth transition-all duration-300 ease-linear hover:text-[#7670CE]"
+                    }
+                    key={index}>
+                    {eachNav.name}
+                  </button>
+                ))}
+              </div>
             </nav>
             <div className={"z-10 flex flex-col gap-y-10"}>
               <h6 className={"text-sm font-light"}>About us</h6>

@@ -44,15 +44,15 @@ export const Navbar = (): React.ReactNode => {
         initial={"hidden"}
         animate={"visible"}
         transition={navTransition}
-        className={"flex h-[10vh] items-center justify-between px-8 font-montserrat text-lg"}>
+        className={"container flex h-[10vh] items-center justify-between font-montserrat text-lg"}>
         <div className={"relative h-14 w-28"}>
-          <Image src={"/png/logo.png"} alt={"kaliper logo"} fill />
+          <Image src={"/png/logo.png"} alt={"kaliper logo"} fill quality={100} />
         </div>
         <div className={"flex items-center gap-x-2"}>
           <Link className={"text-base font-light text-[#ECECEC]"} href={"/lets-talk"}>
             Let&apos;s Talk
           </Link>
-          <button onClick={handleHamburgerMenuClick}>
+          <button aria-label={"Hamburger menu"} onClick={handleHamburgerMenuClick}>
             <Image
               className={"cursor-pointer"}
               height={80}

@@ -64,7 +64,9 @@ export const ContactUs = (): React.ReactNode => {
               />
             </div>
             <div>
-              <button className={"rounded-lg bg-[#FFFFFFB2] bg-opacity-70 px-7 py-2 text-black"}>
+              <button
+                aria-label={"Send Message"}
+                className={"rounded-lg bg-[#FFFFFFB2] bg-opacity-70 px-7 py-2 text-black"}>
                 <span className={"text-xs font-semibold"}>Send Message</span>
               </button>
             </div>
@@ -81,7 +83,7 @@ export const ContactUs = (): React.ReactNode => {
                   </div>
                   <div className="flex flex-col gap-y-2 font-poppins">
                     <div className={"ab relative flex justify-between"}>
-                      <h1 className="text-lg font-semibold">{testimonial.name}</h1>
+                      <h1 className="text-lg font-semibold 2xl:text-2xl">{testimonial.name}</h1>
                       <p
                         className={
                           "absolute -top-4 right-6 text-6xl font-bold italic group-hover:text-[#50C2FA]"
@@ -89,7 +91,9 @@ export const ContactUs = (): React.ReactNode => {
                         “
                       </p>
                     </div>
-                    <p className="text-xs font-normal opacity-75">{testimonial.content}</p>
+                    <p className="text-xs font-normal opacity-75 2xl:text-lg">
+                      {testimonial.content}
+                    </p>
                   </div>
                 </div>
               </div>

@@ -38,7 +38,7 @@ const Page: React.FC = () => {
   };
 
   return (
-    <div className="container relative overflow-hidden bg-[#171717]">
+    <div className="container relative overflow-hidden">
       <div className="absolute left-[25%] h-[40%] w-[40%] rounded-full bg-[#0F151A] blur-[70px]" />
       <div className="absolute left-[25%] h-[40%] w-[40%] rounded-full bg-[#8AA2D0] bg-opacity-50 blur-[8rem]" />
       <div className="absolute -bottom-[20rem] -left-[16rem] h-full w-full rounded-tr-full bg-[#0F151A] bg-opacity-60 blur-[70px]" />
@@ -143,6 +143,7 @@ const Page: React.FC = () => {
               </div>
               <div className="flex w-full items-center justify-between gap-x-8">
                 <button
+                  aria-label={"Send request"}
                   type="submit"
                   className="rounded-xl border border-[#415572] border-opacity-50 bg-gradient-to-r from-[#41557226] to-[#1B1B1E1A] px-5 text-sm font-semibold text-white transition duration-300 hover:opacity-90 lg:w-[60%] lg:py-4 xl:w-[50%] xl:py-5">
                   Send request

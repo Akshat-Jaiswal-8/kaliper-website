@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
+import Head from "next/head";
 
 const gradientVariants = {
   hidden: { opacity: 0, x: 0, y: 0 },
@@ -57,6 +58,9 @@ const AnimatedCounter = ({
 export const Hero = (): React.ReactNode => {
   return (
     <>
+      <Head>
+        <link rel="preload" href="/svg/hero-background.svg" as="image" />
+      </Head>
       <Navbar />
       <section className="mt-2 bg-gradient-to-b from-[#171717] from-20% via-[#171717] via-30% to-[#0F151A] to-100% pb-10">
         <motion.div
@@ -78,7 +82,7 @@ export const Hero = (): React.ReactNode => {
                   initial="hidden"
                   whileInView="visible"
                   transition={headingTransition}
-                  className="mx-auto text-center font-prompt font-bold !leading-tight text-[#ECECEC] lg:text-5xl xl:text-5xl">
+                  className="mx-auto text-center font-prompt font-bold !leading-tight text-[#ECECEC] lg:text-5xl xl:text-5xl 2xl:text-6xl">
                   Transforming ideas <p>into impact, you trusted</p>
                 </motion.h1>
                 <motion.h1
@@ -86,7 +90,7 @@ export const Hero = (): React.ReactNode => {
                   initial="hidden"
                   whileInView="visible"
                   transition={contentTransition}
-                  className="mx-auto bg-gradient-to-r from-[#4AC7FA] to-[#E649F5] bg-clip-text text-center font-prompt font-bold text-transparent lg:text-6xl xl:text-7xl">
+                  className="mx-auto bg-gradient-to-r from-[#4AC7FA] to-[#E649F5] bg-clip-text text-center font-prompt font-bold text-transparent lg:text-6xl xl:text-7xl 2xl:text-8xl">
                   IT Consulting Partner
                 </motion.h1>
               </div>
@@ -95,7 +99,7 @@ export const Hero = (): React.ReactNode => {
                 initial="hidden"
                 whileInView="visible"
                 transition={buttonTransition}
-                className="rounded-full border border-white/10 p-4 lg:h-16 lg:w-52 xl:h-16 xl:w-52">
+                className="rounded-full border border-white/10 p-4 lg:h-16 lg:w-52 xl:h-16 xl:w-52 2xl:h-20 2xl:w-60">
                 <Link className="text-xl" href="/lets-talk">
                   Connect with us
                 </Link>
@@ -121,7 +125,7 @@ export const Hero = (): React.ReactNode => {
               </motion.div>
             </div>
           </div>
-          <h1 className="text-center font-semibold text-[#D9D9D9] lg:mt-12 lg:text-4xl xl:mt-16 xl:text-5xl">
+          <h1 className="text-center font-semibold text-[#D9D9D9] lg:mt-12 lg:text-4xl xl:mt-16 xl:text-5xl 2xl:text-6xl">
             “Providing support at every milestone.”
           </h1>
         </div>

@@ -18,7 +18,7 @@ const Page = () => {
       <div className="absolute -right-52 top-[20%] h-[30%] w-[30%] rounded-full bg-[#0F151A] bg-opacity-70 blur-[70px]" />
       <div className="absolute -right-52 top-[20%] h-[30%] w-[30%] rounded-full bg-[#8AA2D0] bg-opacity-50 blur-[15rem]" />
       <div className="absolute -left-20 top-60 h-[50%] w-[80%] rounded-full bg-[#0F151A] bg-opacity-70 blur-[70px]" />
-      <button onClick={handleBack}>
+      <button aria-label={"Back"} onClick={handleBack}>
         <CircleArrowLeft strokeWidth={1} size={35} className={"mx-8 mt-8"} color={"#9C9C9C"} />
       </button>
       <div className={"container relative z-10 mx-auto flex w-[85%] flex-col items-center"}>
