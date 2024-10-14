@@ -148,3 +148,26 @@ export const faqs = [
     answer: "Kaliper Technologies Private Limited has two directors -Amit Verma and Raju Pradeep",
   },
 ];
+
+export const founders = [
+  { src: "/png/amit.png", alt: "amit" },
+  { src: "/png/pradeep.png", alt: "pradeep" },
+];
+export const engineers = [
+  { src: "/png/varsha.png", alt: "varsha" },
+  { src: "/png/sonu.png", alt: "sonu" },
+  { src: "/png/gajender.png", alt: "gajendar" },
+  { src: "/png/tejas.png", alt: "tejas" },
+  { src: "/png/gaurav.png", alt: "gaurav" },
+  { src: "/png/deepankar.png", alt: "deepankar" },
+  { src: "/png/akshat.png", alt: "akshat" },
+];
+export const marketing = [
+  { src: "/png/tanu.png", alt: "tanu" },
+  { src: "/png/priyanka.png", alt: "priyanka" },
+];
+export const designers = [
+  { src: "/png/garima.png", alt: "garima" },
+  { src: "/png/sakshi.png", alt: "sakshi" },
+  { src: "/png/sadhna.png", alt: "sadhna" },
+];

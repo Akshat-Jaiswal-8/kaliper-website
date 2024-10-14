@@ -7,7 +7,7 @@ import { Footer } from "@/app/(home)/_components/footer";
 import { CircleArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-const Page = () => {
+const LayoutPage = () => {
   const router = useRouter();
 
   const handleBack = () => {
@@ -18,13 +18,14 @@ const Page = () => {
       <div className="absolute -top-20 h-[20%] w-[40rem] rounded-full bg-[#0F151A] bg-opacity-70 blur-3xl lg:left-[22%] xl:left-[28%]" />
       <div className="absolute -top-52 h-[20%] w-[40rem] rounded-b-full bg-[#8AA2D0] bg-opacity-30 blur-[10rem] lg:left-[22%] xl:left-[28%]" />
       <div className="absolute -left-20 top-[20%] h-[40%] w-[80%] rounded-full bg-[#0F151A] bg-opacity-70 blur-[70px]" />
-      <button onClick={handleBack}>
+      <button aria-label={"Back"} onClick={handleBack}>
         <CircleArrowLeft strokeWidth={1} size={35} className={"mt-10"} color={"#9C9C9C"} />
       </button>
-      <div className={"relative z-10 my-20 text-white"}>
-        <h2 className="mx-auto mb-10 bg-gradient-to-r from-[#4AC7FA] to-[#E649F5] bg-clip-text font-montserrat text-4xl font-bold text-transparent">
+      <div className={"relative z-10 my-20"}>
+        <h2 className="mx-auto mb-10 bg-gradient-to-r from-sky-500 to-pink-500 bg-clip-text text-4xl font-bold text-transparent 2xl:text-6xl">
           Our Services
         </h2>
+
         <div className={"flex flex-col gap-y-4 text-4xl font-semibold text-[#ECECEC]"}>
           <h2>Innovative IT Solutions</h2>
           <h2>Expert Consulting for Your Business Growth.</h2>
@@ -39,24 +40,28 @@ const Page = () => {
           {services.map((service) => (
             <div
               key={service.title}
-              className="mx-auto flex flex-col gap-y-2 rounded-2xl border border-[#415572] border-opacity-50 bg-transparent px-4 pb-4 pt-10 shadow-lg lg:h-52 lg:w-96 xl:h-52 xl:w-[22rem]">
+              className="mx-auto flex flex-col gap-y-2 rounded-2xl border border-[#415572] border-opacity-50 bg-transparent px-4 pb-4 pt-10 shadow-lg lg:h-52 lg:w-96 xl:h-52 xl:w-[22rem] 2xl:h-[15rem] 2xl:w-[30rem]">
               <div className="flex items-center justify-between">
-                <h3 className="my-auto text-base font-medium text-white">{service.title}</h3>
+                <h3 className="my-auto text-base font-medium text-white 2xl:text-lg">
+                  {service.title}
+                </h3>
                 <Image
                   width={80}
                   height={60}
                   src={service.imgSrc}
                   alt={service.title}
-                  className="lg:h-16 lg:w-20"
+                  className="lg:h-16 lg:w-20 2xl:h-20 2xl:w-24"
                 />
               </div>
               <div>
-                <p className="text-xs font-light text-[#ECECEC]">{service.description}</p>
+                <p className="text-xs font-light text-[#ECECEC] 2xl:text-sm">
+                  {service.description}
+                </p>
               </div>
               <div className="mt-auto flex justify-end">
                 <Link
                   href={"/lets-talk"}
-                  className="shadow-b rounded border-[0.35px] border-[#FFFFF] px-2 py-1 text-xs text-white transition-all duration-300 hover:border-[#153982] hover:bg-[#153982] hover:shadow">
+                  className="shadow-b rounded border-[0.5px] border-white px-2 py-1 text-xs text-white transition-all duration-300 hover:border-[#153982] hover:bg-[#153982] hover:shadow 2xl:text-sm">
                   Let&apos;s Talk
                 </Link>
               </div>
@@ -127,4 +132,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default LayoutPage;

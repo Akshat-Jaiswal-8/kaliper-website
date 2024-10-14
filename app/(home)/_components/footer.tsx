@@ -14,6 +14,7 @@ export const Footer = (): React.ReactNode => {
               Contact us Today or Request a callback.
             </p>
             <button
+              aria-label={"Request a call"}
               className={"mt-4 rounded-lg bg-white px-4 py-2 font-inter font-semibold text-black"}>
               <Link
                 href={

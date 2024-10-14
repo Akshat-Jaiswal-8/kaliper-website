@@ -21,7 +21,9 @@ export const Faqs = () => {
             onClick={() => handleAccordionAction(faq.id)}
             key={faq.id}>
             <div className="flex items-center justify-between transition-all duration-300">
-              <h1 className="px-1 text-base font-light lg:text-base xl:text-lg">{faq.question}</h1>
+              <h2 className="px-1 text-base font-semibold lg:text-base xl:text-lg 2xl:text-xl">
+                {faq.question}
+              </h2>
               <span>
                 <ChevronDown
                   className={cn("transition-all duration-300", openId === faq.id && "rotate-180")}

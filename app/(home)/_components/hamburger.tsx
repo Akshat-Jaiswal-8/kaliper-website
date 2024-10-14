@@ -37,7 +37,10 @@ export const Hamburger = ({ isOpen, onClose }: HamburgerProps) => {
           </div>
         </div>
         <div className={"h-full flex-grow bg-[#0F151A]"}>
-          <button onClick={onClose} className={"flex h-[5%] w-full justify-end p-5"}>
+          <button
+            aria-label={"close"}
+            onClick={onClose}
+            className={"flex h-[5%] w-full justify-end p-5"}>
             <CircleX strokeWidth={0.75} size={32} />
           </button>
           <div className={"flex h-[95%] items-center justify-around gap-x-2"}>
@@ -47,7 +50,7 @@ export const Hamburger = ({ isOpen, onClose }: HamburgerProps) => {
               <Link href={"/lets-talk"}>Let&apos;s talk</Link>
             </div>
             <div className={"flex flex-col gap-y-6 font-light lg:text-xl xl:text-2xl"}>
-              <h3 className={"font-bold"}>Customer we serve</h3>
+              <h1 className={"font-bold"}>Customer we serve</h1>
               <p>Startups</p>
               <p>Small & medium</p>
               <p>Enterprises</p>

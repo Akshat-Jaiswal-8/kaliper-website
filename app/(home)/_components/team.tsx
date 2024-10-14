@@ -2,29 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-
-const founders = [
-  { src: "/svg/amit.svg", alt: "amit" },
-  { src: "/svg/pradeep.svg", alt: "pradeep" },
-];
-const engineers = [
-  { src: "/svg/varsha.svg", alt: "varsha" },
-  { src: "/svg/sonu.svg", alt: "sonu" },
-  { src: "/svg/gajendar.svg", alt: "gajendar" },
-  { src: "/svg/tejas.svg", alt: "tejas" },
-  { src: "/svg/gaurav.svg", alt: "gaurav" },
-  { src: "/svg/deepankar.svg", alt: "deepankar" },
-  { src: "/svg/akshat.svg", alt: "akshat" },
-];
-const marketing = [
-  { src: "/svg/tanu.svg", alt: "tanu" },
-  { src: "/svg/priyanka.svg", alt: "priyanka" },
-];
-const designers = [
-  { src: "/svg/garima.svg", alt: "garima" },
-  { src: "/svg/sakshi.svg", alt: "sakshi" },
-  { src: "/svg/sadhna.svg", alt: "sadhna" },
-];
+import { designers, engineers, founders, marketing } from "@/app/(home)/constant";
 
 const headerVariants = {
   hidden: { opacity: 0, x: 0, y: 0 },
@@ -69,20 +47,19 @@ export const Team = () => {
                     </span>
                   ))}
                 </div>
-                <div className="relative grid h-full w-full grid-cols-2 items-center justify-around">
+                <div className="relative grid h-full w-full grid-cols-2 items-center justify-center gap-8 text-center">
                   {founders.map((image, index) => (
                     <motion.div
                       variants={imageVariants}
                       initial={"hidden"}
                       whileInView={"visible"}
                       transition={{ delay: 0.4, duration: 0.8 }}
-                      key={index}
-                      className={"z-20"}>
+                      key={index}>
                       <Image
-                        className={"h-full w-full"}
                         src={image.src}
-                        width={150}
-                        height={150}
+                        quality={100}
+                        width={1000}
+                        height={1000}
                         alt={image.alt}
                       />
                     </motion.div>
@@ -99,7 +76,7 @@ export const Team = () => {
                         </span>
                       ))}
                     </div>
-                    <div className="relative grid h-full w-full grid-cols-2 items-center justify-around">
+                    <div className="relative grid h-full w-full grid-cols-2 items-center justify-center gap-8 text-center">
                       {designers.map((image, index) => (
                         <motion.div
                           variants={imageVariants}
@@ -108,10 +85,10 @@ export const Team = () => {
                           transition={{ delay: 0.4, duration: 0.8 }}
                           key={index}>
                           <Image
-                            className={"h-full w-full"}
                             src={image.src}
-                            width={120}
-                            height={120}
+                            quality={100}
+                            width={1000}
+                            height={1000}
                             alt={image.alt}
                           />
                         </motion.div>
@@ -126,20 +103,19 @@ export const Team = () => {
                         </span>
                       ))}
                     </div>
-                    <div className="relative grid h-full w-full grid-cols-2 items-center justify-center gap-4 text-center">
+                    <div className="relative grid h-full w-full grid-cols-2 items-center justify-center gap-8 text-center">
                       {engineers.map((image, index) => (
                         <motion.div
                           variants={imageVariants}
                           initial={"hidden"}
                           whileInView={"visible"}
                           transition={{ delay: 0.4, duration: 0.8 }}
-                          key={index}
-                          className={`mx-auto ${engineers.length === 3 && index === 2 ? "col-span-2" : ""}`}>
+                          key={index}>
                           <Image
-                            className={"h-full w-full"}
                             src={image.src}
-                            width={150}
-                            height={150}
+                            quality={100}
+                            width={1000}
+                            height={1000}
                             alt={image.alt}
                           />
                         </motion.div>
@@ -154,20 +130,19 @@ export const Team = () => {
                         </span>
                       ))}
                     </div>
-                    <div className="relative grid h-full w-full grid-cols-2 items-center justify-around">
+                    <div className="relative grid h-full w-full grid-cols-2 items-center justify-center gap-8 text-center">
                       {marketing.map((image, index) => (
                         <motion.div
                           variants={imageVariants}
                           initial={"hidden"}
                           whileInView={"visible"}
                           transition={{ delay: 0.4, duration: 0.8 }}
-                          key={index}
-                          className={""}>
+                          key={index}>
                           <Image
-                            className={"h-full w-full"}
                             src={image.src}
-                            width={150}
-                            height={150}
+                            quality={100}
+                            width={1000}
+                            height={1000}
                             alt={image.alt}
                           />
                         </motion.div>
@@ -179,9 +154,10 @@ export const Team = () => {
             </div>
             <div className="relative z-20 mx-auto w-full text-center">
               <button
+                aria-label={viewAll ? "View Less" : "View all"}
                 onClick={handleViewAll}
-                className="rounded-full border border-[#FFFFFF] bg-[#E6E6E60D] px-4 py-2 font-inter text-sm font-semibold">
-                View All
+                className="rounded-full border border-white bg-transparent px-4 py-2 font-inter text-sm font-semibold focus:outline-none">
+                {viewAll ? "View less" : "View all"}
               </button>
             </div>
           </div>

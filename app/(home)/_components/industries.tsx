@@ -15,13 +15,15 @@ export const Industries = (): React.ReactNode => {
     <>
       <section className="mb-30 relative mx-auto mt-20 flex h-full w-full flex-col px-6 font-montserrat">
         <div className="flex flex-col items-center gap-y-4">
-          <h1 className="text-center text-4xl font-bold">How we can help you</h1>
-          <p className="text-center font-extralight text-[#D9D9D9]">
+          <h1 className="text-center text-4xl font-bold 2xl:text-5xl">How we can help you</h1>
+          <p className="text-center font-extralight text-[#D9D9D9] 2xl:text-xl">
             Using powerful, industry-specific software solutions, our team can help you achieve your
             business goals.
           </p>
         </div>
-        <motion.div className="mx-auto mt-20 grid grid-cols-4 gap-12 pb-4" layout>
+        <motion.div
+          className="mx-auto mt-20 grid grid-cols-4 gap-12 pb-4"
+          layout={"preserve-aspect"}>
           <AnimatePresence initial={false}>
             {articlesCard.map(
               (eachArticleCard: articlesCardProps, index: number) =>
