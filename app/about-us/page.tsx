@@ -45,25 +45,28 @@ const AboutUs = (): React.ReactNode => {
           <div className={"relative mb-20"}>
             <nav
               className={
-                "relative flex w-[70%] items-center justify-between py-24 font-semibold lg:text-2xl xl:text-3xl"
+                "relative flex w-full items-center justify-between py-24 font-semibold lg:text-2xl xl:text-3xl"
               }>
               <button onClick={handleBack}>
                 <CircleArrowLeft strokeWidth={1} size={35} color={"#9C9C9C"} />
               </button>
-              <div className={"flex items-center gap-x-16"}>
-                {aboutUsNavLinks.map((eachNav, index) => (
-                  <button
-                    onClick={(e) => handleSmoothScroll(e, eachNav.href.substring(1))}
-                    role={"link"}
-                    className={
-                      "cursor-pointer !scroll-smooth transition-all duration-300 ease-linear hover:text-[#7670CE]"
-                    }
-                    key={index}>
-                    {eachNav.name}
-                  </button>
-                ))}
+              <div className={"flex flex-grow justify-center"}>
+                <div className={"flex items-center gap-x-16"}>
+                  {aboutUsNavLinks.map((eachNav, index) => (
+                    <button
+                      onClick={(e) => handleSmoothScroll(e, eachNav.href.substring(1))}
+                      role={"link"}
+                      className={
+                        "cursor-pointer !scroll-smooth transition-all duration-300 ease-linear hover:text-[#7670CE]"
+                      }
+                      key={index}>
+                      {eachNav.name}
+                    </button>
+                  ))}
+                </div>
               </div>
             </nav>
+
             <div className={"z-10 flex flex-col gap-y-10"}>
               <h6 className={"text-sm font-light"}>About us</h6>
               <h2 className={"w-[50%] text-4xl font-semibold leading-normal"}>
