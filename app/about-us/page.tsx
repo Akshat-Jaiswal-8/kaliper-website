@@ -67,28 +67,40 @@ const AboutUs = (): React.ReactNode => {
               </div>
             </nav>
 
-            <div className={"z-10 flex flex-col gap-y-10"}>
+            <div className={"z-10 flex flex-col gap-y-2"}>
               <h6 className={"text-sm font-light"}>About us</h6>
-              <h2 className={"w-[50%] text-4xl font-semibold leading-normal"}>
+              <h2 className={"w-[50%] font-semibold !leading-normal lg:text-3xl xl:text-4xl"}>
                 We believe in
                 <span className={"text-[#7670CE]"}>
                   {" "}
-                  ‘Crafting delightful experiences that last.’
+                  ‘Crafting Innovative Solutions for a Digital Future.’
                 </span>
               </h2>
             </div>
-            <div className={"z-20 mt-10 flex flex-col gap-y-6 leading-relaxed"}>
-              <p className={"font-extralight lg:text-[1.3rem]"}>
-                Kaliper Technologies is a dynamic IT consulting firm established in 2023. We
-                specialize in data engineering, analytics, and artificial intelligence, providing
-                innovative solutions that transform data into actionable insights.
+            <div className={"z-20 flex flex-col gap-y-6 lg:mt-5 xl:mt-10"}>
+              <p
+                className={"font-extralight !leading-relaxed lg:text-base xl:text-xl 2xl:text-3xl"}>
+                At Kaliper Technologies, we believe in transforming possibilities into lasting,
+                delightful experiences. Founded in 2023, we are a forward-thinking IT consulting
+                firm specializing in data engineering, analytics, artificial intelligence, as well
+                as web, mobile app, and UI/UX development. Our innovative solutions empower
+                businesses to turn data into actionable insights while delivering seamless digital
+                experiences across platforms.
               </p>
-              <p className={"font-extralight lg:text-[1.3rem]"}>
-                Our expert team excels in systems architecture, process modeling, and custom
-                development, delivering tailored services that meet the unique needs of each client.
-                We are committed to being a trusted partner, helping organizations navigate the
-                complexities of the digital landscape and achieve their long-term business
-                objectives.
+              <p
+                className={"font-extralight !leading-relaxed lg:text-base xl:text-xl 2xl:text-3xl"}>
+                Our expert team excels in systems architecture, process optimization, and custom
+                development, delivering innovative solutions tailored to the unique challenges of
+                each client. From AI-driven insights to scalable enterprise solutions, we are
+                dedicated to helping organizations navigate the complexities of today’s digital
+                landscape, achieving sustainable growth and long-term success.
+              </p>
+              <p
+                className={
+                  "text-center font-semibold !leading-relaxed text-[#7670CE] lg:my-3 lg:text-2xl xl:my-6 xl:text-3xl 2xl:my-10 2xl:text-4xl"
+                }>
+                ‘With Kaliper Technologies as your trusted partner, your digital transformation
+                journey is in expert hands.’
               </p>
             </div>
           </div>

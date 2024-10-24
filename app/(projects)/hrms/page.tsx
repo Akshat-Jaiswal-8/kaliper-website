@@ -4,6 +4,7 @@ import React from "react";
 import { Footer } from "@/app/(home)/_components/footer";
 import { CircleArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { ProjectDescription } from "@/app/(projects)/_components/project-description";
 
 const Page = () => {
   const router = useRouter();
@@ -21,7 +22,7 @@ const Page = () => {
       <button aria-label={"Back"} onClick={handleBack}>
         <CircleArrowLeft strokeWidth={1} size={35} className={"mx-8 mt-8"} color={"#9C9C9C"} />
       </button>
-      <div className={"container relative z-10 mx-auto flex w-[85%] flex-col items-center"}>
+      <div className={"container relative z-10 mx-auto flex flex-col items-center"}>
         <div className="2xl:py-25 space-y-5 py-10 lg:py-20">
           <h1 className="text-[45px] font-bold text-[#7670CE]">
             HRMS (Human Resource Management System)
@@ -35,48 +36,23 @@ const Page = () => {
           width={1200}
           height={1200}
           alt="candvue"
-          className="2xl:px-15 px-5 lg:px-10"
+          className="2xl:px-15 px-5 lg:mb-14 lg:px-10 xl:mb-20"
         />
-        <article className="py-20">
-          <div className="relative text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-            <div className="absolute -left-20 top-20 h-[20%] w-[110%] rounded-full bg-[#0F151A] bg-opacity-70 blur-[70px]" />
-            <div className="absolute -bottom-72 -left-48 h-[80%] w-[30%] rounded-tr-full bg-[#8AA2D0] bg-opacity-50 blur-[15rem]" />
-            <p className="relative z-10 text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-              The HRMS is a robust software solution designed to streamline all aspects of human
-              resource management within organizations. From recruitment to employee performance
-              evaluation, this system provides comprehensive tools to manage your workforce
-              effectively.
-            </p>
-            <br />
-            <ul className="relative z-10 list-disc text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-              <li>
-                Employee Database: Maintain a centralized repository of employee records, including
-                personal details, job history, and performance reviews.
-              </li>
-              <br />
-              <li>
-                Recruitment Management: Simplify the hiring process with tools for job posting,
-                applicant tracking, and interview scheduling.
-              </li>
-              <br />
-              <li>
-                Payroll Management: Automate payroll processes to ensure timely and accurate
-                employee compensation, including tax calculations and deductions.
-              </li>
-              <br />
-              <li>
-                Performance Management: Facilitate employee evaluations and feedback processes to
-                support professional development and productivity.
-              </li>
-            </ul>
-            <br />
-            <p className="text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-              Enhance your HR processes and empower your workforce with the HRMS!
-            </p>
-          </div>
-        </article>
+        <ProjectDescription
+          briefContent={
+            "The HRMS is a powerful software designed to streamline human resource management, covering recruitment, employee performance, and payroll."
+          }
+          discoverContent={
+            "It offers tools for managing employee databases, recruitment processes, payroll automation, and performance evaluations, ensuring efficient workforce management."
+          }
+          defineContent={
+            "A comprehensive HR solution, HRMS centralizes employee data, simplifies hiring, automates payroll, and supports performance management, helping organizations optimize their HR processes."
+          }
+        />
       </div>
-      <Footer />
+      <div className={"mt-20"}>
+        <Footer />
+      </div>
     </main>
   );
 };

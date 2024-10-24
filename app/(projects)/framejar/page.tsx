@@ -4,6 +4,8 @@ import React from "react";
 import { Footer } from "@/app/(home)/_components/footer";
 import { CircleArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { ProjectDescription } from "@/app/(projects)/_components/project-description";
+import { Navbar } from "@/components/navbar";
 
 const Page = () => {
   const router = useRouter();
@@ -21,7 +23,7 @@ const Page = () => {
       <button aria-label={"Back"} onClick={handleBack}>
         <CircleArrowLeft strokeWidth={1} size={35} className={"mx-8 mt-8"} color={"#9C9C9C"} />
       </button>
-      <div className={"container relative z-10 mx-auto flex w-[85%] flex-col items-center"}>
+      <div className={"container relative z-10 mx-auto flex flex-col items-center"}>
         <div className="2xl:py-25 space-y-5 py-10 lg:py-20">
           <h1 className="text-[45px] font-bold text-[#7670CE]">
             Framejar - Simplifying Content Creation
@@ -36,41 +38,24 @@ const Page = () => {
           width={1200}
           height={1200}
           alt="candvue"
-          className="2xl:px-15 px-5 lg:px-10"
+          className="2xl:px-15 px-5 lg:mb-14 lg:px-10 xl:mb-20"
         />
-        <article className="py-20">
-          <div className="relative text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-            <div className="absolute -left-20 top-20 h-[20%] w-[110%] rounded-full bg-[#0F151A] bg-opacity-70 blur-[70px]" />
-            <div className="absolute -bottom-72 -left-48 h-[80%] w-[30%] rounded-tr-full bg-[#8AA2D0] bg-opacity-50 blur-[15rem]" />
 
-            <ul className="relative z-10 list-disc text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-              <li>
-                With Framejar, you have access to a comprehensive suite of tools, including
-                professional full-time and freelance video editors, graphic designers, and media
-                specialists.
-              </li>
-              <br />
-              <li>
-                From videos and animations to compelling social media visuals, Framejar enables you
-                to bring your ideas to life in a fast and efficient way.
-              </li>
-              <br />
-              <li>
-                Our platform is designed to streamline the creative process, reduce production time,
-                and ensure the highest quality output, helping you stay ahead in today’s fast-paced
-                digital landscape
-              </li>
-            </ul>
-            <br />
-            <p className="text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-              Framejar caters to content creators by providing a comprehensive suite of tools,
-              including access to full-time and freelance video editors. Whether you’re a marketer,
-              content creator, or business owner, Framejar helps bring your ideas to life.{" "}
-            </p>
-          </div>
-        </article>
+        <ProjectDescription
+          briefContent={
+            "Framejar streamlines content creation with tools and professional editors, helping marketers and creators produce high-quality videos and visuals quickly."
+          }
+          discoverContent={
+            "Framejar connects users with professional creators, providing tools to turn ideas into engaging, high-quality content—ideal for marketers, creators, and businesses in today’s digital world."
+          }
+          defineContent={
+            "Framejar is an innovative platform that boosts creativity with tools and access to professionals, helping users create high-quality content for marketers, creators, and businesses."
+          }
+        />
       </div>
-      <Footer />
+      <div className={"mt-20"}>
+        <Footer />
+      </div>
     </main>
   );
 };

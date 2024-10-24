@@ -60,7 +60,6 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon-32x32.png",
-    shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
     other: [
       {
@@ -90,7 +89,7 @@ export default function RootLayout({
         className={`${montserrat.variable} ${prompt.variable} ${poppins.variable} ${inter.variable} bg-[#171717] font-montserrat`}>
         <ClientSmoothScroller />
         {children}
-        <Analytics />
+        <Analytics mode={"production"} />
       </body>
     </html>
   );

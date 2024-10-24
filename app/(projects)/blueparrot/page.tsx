@@ -4,6 +4,7 @@ import React from "react";
 import { Footer } from "@/app/(home)/_components/footer";
 import { CircleArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { ProjectDescription } from "@/app/(projects)/_components/project-description";
 
 const Page = () => {
   const router = useRouter();
@@ -21,7 +22,7 @@ const Page = () => {
       <button aria-label={"Back"} onClick={handleBack}>
         <CircleArrowLeft strokeWidth={1} size={35} className={"mx-8 mt-8"} color={"#9C9C9C"} />
       </button>
-      <div className={"container relative z-10 mx-auto flex w-[85%] flex-col items-center"}>
+      <div className={"container relative z-10 mx-auto flex flex-col items-center"}>
         <div className="2xl:py-25 space-y-5 py-10 lg:py-20">
           <h1 className="text-[45px] font-bold text-[#7670CE]">
             BlueParrot.ai - Smart, Customized Messaging with AI
@@ -36,35 +37,23 @@ const Page = () => {
           width={1200}
           height={1200}
           alt="blueparrot"
-          className="2xl:px-15 px-5 lg:px-10"
+          className="2xl:px-15 px-5 lg:mb-14 lg:px-10 xl:mb-20"
         />
-        <article className="py-20">
-          <div className="relative text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-            <div className="absolute -left-20 top-20 h-[20%] w-[110%] rounded-full bg-[#0F151A] bg-opacity-70 blur-[70px]" />
-            <div className="absolute -bottom-72 -left-48 h-[80%] w-[30%] rounded-tr-full bg-[#8AA2D0] bg-opacity-50 blur-[15rem]" />
-            <p className={"relative z-10"}>
-              Powered by Kaliper’s proprietary generative AI, BlueParrot.ai allows users to generate
-              customized messages with just a brief prompt, making communication faster, more
-              efficient, and more meaningful.
-            </p>
-
-            <br />
-            <p className="relative z-10 text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-              With BlueParrot.ai, the message template is dynamic and continuously adapts as you
-              interact with profiles online. Whether you’re sending an email, responding on social
-              media, or connecting on professional platforms, our tool seamlessly updates the
-              content based on the specific context, ensuring your communication is always tailored
-              to the recipient.
-            </p>
-            <br />
-            <p className="relative z-10 text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-              Unlock the power of personalized messaging and transform the way you communicate –
-              effortlessly, intelligently, and in real-time.
-            </p>
-          </div>
-        </article>
+        <ProjectDescription
+          briefContent={
+            "BlueParrot.ai’s templates adapt in real-time, tailoring messages for personalized, relevant communication."
+          }
+          discoverContent={
+            "BlueParrot.ai’s dynamic templates adapt in real-time, tailoring messages to context for personalized and relevant communication."
+          }
+          defineContent={
+            "BlueParrot.ai offers an intelligent tool for personalized messaging, helping users easily create tailored content for better connections across digital platforms."
+          }
+        />
       </div>
-      <Footer />
+      <div className={"mt-20"}>
+        <Footer />
+      </div>
     </main>
   );
 };
