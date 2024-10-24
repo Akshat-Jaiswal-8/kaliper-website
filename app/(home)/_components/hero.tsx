@@ -90,7 +90,7 @@ export const Hero = (): React.ReactNode => {
                   initial="hidden"
                   whileInView="visible"
                   transition={contentTransition}
-                  className="mx-auto bg-gradient-to-r from-[#4AC7FA] to-[#E649F5] bg-clip-text text-center font-prompt font-bold text-transparent lg:text-6xl xl:text-7xl 2xl:text-8xl">
+                  className="mx-auto bg-gradient-to-r from-[#4AC7FA] to-[#E649F5] bg-clip-text py-2 text-center font-prompt font-bold text-transparent lg:text-6xl xl:text-7xl 2xl:text-8xl">
                   IT Consulting Partner
                 </motion.h1>
               </div>

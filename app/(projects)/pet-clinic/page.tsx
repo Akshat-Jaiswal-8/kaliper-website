@@ -4,6 +4,7 @@ import React from "react";
 import { Footer } from "@/app/(home)/_components/footer";
 import { CircleArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { ProjectDescription } from "@/app/(projects)/_components/project-description";
 
 const Page = () => {
   const router = useRouter();
@@ -21,7 +22,7 @@ const Page = () => {
       <button aria-label={"Back"} onClick={handleBack}>
         <CircleArrowLeft strokeWidth={1} size={35} className={"mx-8 mt-8"} color={"#9C9C9C"} />
       </button>
-      <div className={"container relative z-10 mx-auto flex w-[85%] flex-col items-center"}>
+      <div className={"container relative z-10 mx-auto flex flex-col items-center"}>
         <div className="2xl:py-25 space-y-5 py-10 lg:py-20">
           <h1 className="text-[45px] font-bold text-[#7670CE]">
             Pet Clinic Management System - Streamlined Care for Your Furry Friends
@@ -36,47 +37,23 @@ const Page = () => {
           width={1200}
           height={1200}
           alt="candvue"
-          className="2xl:px-15 px-5 lg:px-10"
+          className="2xl:px-15 px-5 lg:mb-14 lg:px-10 xl:mb-20"
         />
-        <article className="py-20">
-          <div className="relative text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-            <div className="absolute -left-20 top-20 h-[20%] w-[110%] rounded-full bg-[#0F151A] bg-opacity-70 blur-[70px]" />
-            <div className="absolute -bottom-72 -left-48 h-[80%] w-[30%] rounded-tr-full bg-[#8AA2D0] bg-opacity-50 blur-[15rem]" />
-            <p className="relative z-10 text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-              With features tailored for pet care providers, this system simplifies appointment
-              scheduling, patient management, medical records, billing, and inventory tracking.
-            </p>
-            <br />
-            <ul className="relative z-10 list-disc text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-              <li>
-                Appointment Scheduling: Easily book, reschedule, and manage appointments with pet
-                owners, ensuring optimal time management for staff.
-              </li>
-              <br />
-              <li>
-                Medical Records Management: Keep detailed medical histories for pets, including
-                vaccination records, treatments, and prescriptions, all in one secure place.
-              </li>
-              <br />
-              <li>
-                Inventory Management: Track medications, supplies, and products to maintain adequate
-                stock levels and streamline ordering processes.
-              </li>
-              <br />
-              <li>
-                Client Communication: Enhance client relationships with reminders, follow-ups, and
-                easy access to information.
-              </li>
-            </ul>
-            <br />
-            <p className="text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-              Ensure quality care for pets while optimizing clinic operations with the Pet Clinic
-              Management System!
-            </p>
-          </div>
-        </article>
+        <ProjectDescription
+          briefContent={
+            "This system streamlines pet care operations with features for scheduling, patient management, medical records, billing, and inventory tracking."
+          }
+          discoverContent={
+            "Designed for pet care providers, it offers tools for booking appointments, managing patient records, and tracking inventory, ensuring seamless communication and efficient workflow."
+          }
+          defineContent={
+            "A comprehensive solution that simplifies appointment scheduling, consolidates medical records, and optimizes inventory management, while enhancing client communication for better service."
+          }
+        />
       </div>
-      <Footer />
+      <div className={"mt-20"}>
+        <Footer />
+      </div>
     </main>
   );
 };

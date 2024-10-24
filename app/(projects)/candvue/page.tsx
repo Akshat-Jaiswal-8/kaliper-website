@@ -4,6 +4,7 @@ import React from "react";
 import { Footer } from "@/app/(home)/_components/footer";
 import { CircleArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { ProjectDescription } from "@/app/(projects)/_components/project-description";
 
 const Page = () => {
   const router = useRouter();
@@ -21,7 +22,7 @@ const Page = () => {
       <button aria-label={"Back"} onClick={handleBack}>
         <CircleArrowLeft strokeWidth={1} size={35} className={"mx-8 mt-8"} color={"#9C9C9C"} />
       </button>
-      <div className={"container relative z-10 mx-auto flex w-[85%] flex-col items-center"}>
+      <div className={"container relative z-10 mx-auto flex flex-col items-center"}>
         <div className="2xl:py-25 space-y-5 py-10 lg:py-20">
           <h1 className="text-[45px] font-bold text-[#7670CE]">
             Candvue: Streamlining Candidate Screening at Scale
@@ -37,39 +38,23 @@ const Page = () => {
           width={1200}
           height={1200}
           alt="candvue"
-          className="2xl:px-15 px-5 lg:px-10"
+          className="2xl:px-15 px-5 lg:mb-14 lg:px-10 xl:mb-20"
         />
-        <article className="py-20">
-          <div className="relative text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-            <div className="absolute -left-20 top-20 h-[20%] w-[110%] rounded-full bg-[#0F151A] bg-opacity-70 blur-[70px]" />
-            <div className="absolute -bottom-72 -left-48 h-[80%] w-[30%] rounded-tr-full bg-[#8AA2D0] bg-opacity-50 blur-[15rem]" />
-            <p className={"relative z-10"}>
-              Hiring the right talent is crucial, but traditional recruitment methods can be slow
-              and expensive. Candvue transforms your hiring process with an efficient,
-              cost-effective solution for candidate screening at scale.
-            </p>
-
-            <br />
-            <p className="relative z-10 text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-              Candvue is the affordable solution for screening candidates at scale. Traditional
-              hiring methods are often costly and time-consuming. With Candvue, you can drastically
-              reduce your hiring overhead while enhancing the efficiency of your recruitment
-              process.
-            </p>
-            <br />
-            <p className="relative z-10 text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-              Our smart candidate screening software allows you to evaluate candidates faster,
-              without compromising on quality, so you can focus on what matters most—hiring the
-              right talent.
-            </p>
-            <br />
-            <p className="relative z-10 text-[36px] font-extralight leading-[54px] text-[#ECECEC]">
-              Save valuable time, cut down costs, and elevate your hiring strategy with Candvue.
-            </p>
-          </div>
-        </article>
+        <ProjectDescription
+          briefContent={
+            "The HRMS is a powerful software designed to streamline human resource management, covering recruitment, employee performance, and payroll."
+          }
+          discoverContent={
+            "It offers tools for managing employee databases, recruitment processes, payroll automation, and performance evaluations, ensuring efficient workforce management."
+          }
+          defineContent={
+            "A comprehensive HR solution, HRMS centralizes employee data, simplifies hiring, automates payroll, and supports performance management, helping organizations optimize their HR processes."
+          }
+        />
       </div>
-      <Footer />
+      <div className={"mt-20"}>
+        <Footer />
+      </div>
     </main>
   );
 };
