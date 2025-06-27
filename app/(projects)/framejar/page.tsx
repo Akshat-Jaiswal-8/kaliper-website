@@ -1,11 +1,9 @@
 "use client";
-import Image from "next/image";
-import React from "react";
 import { Footer } from "@/app/(home)/_components/footer";
-import { CircleArrowLeft } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { ProjectDescription } from "@/app/(projects)/_components/project-description";
-import { Navbar } from "@/components/navbar";
+import { CircleArrowLeft } from "lucide-react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
   const router = useRouter();
